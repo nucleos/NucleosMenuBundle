@@ -1,0 +1,58 @@
+{
+  "name": "core23/menu-bundle",
+  "type": "symfony-bundle",
+  "description": "This bundle provides services for defining static menus for sonata.",
+  "keywords": [
+    "symfony",
+    "sonata",
+    "bundle",
+    "menu",
+    "generator"
+  ],
+  "homepage": "https://core23.de",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christian Gripp",
+      "email": "mail@core23.de"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "knplabs/knp-menu": "^2.1",
+    "sonata-project/block-bundle": "^3.8@dev",
+    "symfony/dependency-injection": "^2.8.6 || ^3.2 || ^4.0",
+    "symfony/expression-language": "^2.8.6 || ^3.2 || ^4.0",
+    "symfony/framework-bundle": "^2.8.6 || ^3.2 || ^4.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.0",
+    "matthiasnoback/symfony-dependency-injection-test": "^1.1",
+    "phpunit/phpunit": "^5.7",
+    "sebastian/exporter": "^2.0",
+    "sllh/php-cs-fixer-styleci-bridge": "^2.0",
+    "symfony/phpunit-bridge": "^4.0"
+  },
+  "conflict": {
+    "symfony/http-foundation": "<2.8",
+    "symfony/http-kernel": "<2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core23\\MenuBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Core23\\MenuBundle\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.x-dev"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
