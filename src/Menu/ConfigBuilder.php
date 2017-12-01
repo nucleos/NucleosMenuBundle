@@ -131,20 +131,20 @@ final class ConfigBuilder
         return $menu;
     }
 
-   /**
-    * @param string            $id
-    * @param array             $parameters
-    * @param string|null|false $domain
-    * @param string|null       $locale
-    *
-    * @return string
-    */
-   private function trans($id, array $parameters = array(), $domain = null, $locale = null): string
-   {
-       if (false === $domain) {
-           return $id;
-       }
+    /**
+     * @param string            $id
+     * @param array             $parameters
+     * @param string|null|false $domain
+     * @param string|null       $locale
+     *
+     * @return string
+     */
+    private function trans($id, array $parameters = array(), $domain = null, $locale = null): string
+    {
+        if (false === $domain) {
+            return $id;
+        }
 
-       return $this->translator->trans($id, $parameters, $domain, $locale);
-   }
+        return $this->translator->trans($id, $parameters, $domain, $locale);
+    }
 }
