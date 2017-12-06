@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -39,7 +41,7 @@ final class ConfigProvider implements MenuProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function get($name, array $options = array())
+    public function get($name, array $options = [])
     {
         if (!$this->has($name)) {
             throw new \InvalidArgumentException(sprintf('The menu "%s" is not defined.', $name));
@@ -51,7 +53,7 @@ final class ConfigProvider implements MenuProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function has($name, array $options = array())
+    public function has($name, array $options = [])
     {
         return isset($this->menus[$name]);
     }

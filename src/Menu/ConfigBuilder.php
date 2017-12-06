@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -45,22 +47,22 @@ final class ConfigBuilder
      */
     public function buildMenu(array $menu, array $options): ItemInterface
     {
-        $menuOptions = array_merge_recursive(array(
-            'attributes' => array(
+        $menuOptions = array_merge_recursive([
+            'attributes' => [
                 'class' => 'nav',
-            ),
-            'childrenAttributes' => array(
+            ],
+            'childrenAttributes' => [
                 'class' => 'nav nav-pills',
-            ),
-        ), $options);
+            ],
+        ], $options);
 
         if (array_key_exists('attributes', $menu)) {
-            $menuOptions = array_merge($menuOptions, array(
+            $menuOptions = array_merge($menuOptions, [
                 'childrenAttributes' => $menu['attributes'],
-            ));
+            ]);
         }
 
-        $menuItem    = $this->factory->createItem('main', $menuOptions);
+        $menuItem = $this->factory->createItem('main', $menuOptions);
 
         if (array_key_exists('items', $menu)) {
             $this->buildSubMenu($menuItem, $menu['items']);
@@ -76,48 +78,48 @@ final class ConfigBuilder
      *
      * @return ItemInterface
      */
-    private function buildSubMenu(ItemInterface $menu, array $configItems, array $baseMenuOptions = array()): ItemInterface
+    private function buildSubMenu(ItemInterface $menu, array $configItems, array $baseMenuOptions = []): ItemInterface
     {
-        $subMenuOptions = array(
-            'attributes' => array(
+        $subMenuOptions = [
+            'attributes' => [
                 'class' => 'dropdown',
-            ),
-            'childrenAttributes' => array(
+            ],
+            'childrenAttributes' => [
                 'class' => 'dropdown-menu',
-            ),
-            'linkAttributes' => array(
+            ],
+            'linkAttributes' => [
                 'class'       => 'dropdown-toggle',
                 'data-toggle' => 'dropdown',
                 'data-target' => '#',
-            ),
-            'extras' => array(
+            ],
+            'extras' => [
                 'safe_label'         => true,
                 'translation_domain' => false,
-            ),
-        );
+            ],
+        ];
 
         foreach ($configItems as $item) {
-            $label = $this->trans($item['label'], array(), $item['label_catalogue']);
+            $label = $this->trans($item['label'], [], $item['label_catalogue']);
 
             if (!empty($item['icon'])) {
                 $label = '<i class="'.$item['icon'].'"></i> '.$label;
             }
 
-            $menuOptions = array_merge($baseMenuOptions, array(
+            $menuOptions = array_merge($baseMenuOptions, [
                 'route'           => $item['route'],
                 'routeParameters' => $item['routeParams'],
-                'linkAttributes'  => array('class' => $item['class']),
-                'extras'          => array(
+                'linkAttributes'  => ['class' => $item['class']],
+                'extras'          => [
                     'safe_label'         => true,
                     'translation_domain' => false,
-                ),
-            ));
+                ],
+            ]);
 
             if (count($item['children']) > 0) {
                 $label .= ' <b class="caret caret-menu"></b>';
-                $menuOptions = array_merge($menuOptions, $subMenuOptions, array(
-                    'label'  => $label,
-                ));
+                $menuOptions = array_merge($menuOptions, $subMenuOptions, [
+                    'label' => $label,
+                ]);
             }
 
             $subMenu = $this->factory->createItem($item['label'], $menuOptions);
@@ -139,7 +141,7 @@ final class ConfigBuilder
      *
      * @return string
      */
-    private function trans($id, array $parameters = array(), $domain = null, $locale = null): string
+    private function trans($id, array $parameters = [], $domain = null, $locale = null): string
     {
         if (false === $domain) {
             return $id;

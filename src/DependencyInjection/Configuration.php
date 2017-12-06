@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -25,7 +27,7 @@ final class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
 
         /** @var ArrayNodeDefinition $node */
-        $node        = $treeBuilder->root('core23_menu');
+        $node = $treeBuilder->root('core23_menu');
 
         $this->addMenuSection($node);
 
@@ -50,12 +52,12 @@ final class Configuration implements ConfigurationInterface
                             ->scalarNode('name')->defaultNull()->end()
                             ->arrayNode('attributes')
                                  ->useAttributeAsKey('id')
-                                 ->defaultValue(array())
+                                 ->defaultValue([])
                                  ->prototype('scalar')->end()
                             ->end()
                             ->arrayNode('items')
                                 ->useAttributeAsKey('id')
-                                ->defaultValue(array())
+                                ->defaultValue([])
                                 ->prototype('array');
 
         $this->buildPathNode($menuNode);
@@ -82,7 +84,7 @@ final class Configuration implements ConfigurationInterface
                 ->scalarNode('class')->defaultNull()->end()
                 ->scalarNode('route')->defaultNull()->end()
                 ->arrayNode('routeParams')
-                    ->defaultValue(array())
+                    ->defaultValue([])
                     ->useAttributeAsKey('param')
                     ->prototype('scalar')->end()
                     ->validate()->ifTrue(function ($element) {
@@ -90,12 +92,12 @@ final class Configuration implements ConfigurationInterface
                     })->thenInvalid('The routeParams element must be an array.')->end()
                 ->end()
                 ->variableNode('children')
-                    ->defaultValue(array())
+                    ->defaultValue([])
                     ->validate()->ifTrue(function ($element) {
                         return !is_array($element);
                     })->thenInvalid('The children element must be an array.')->end()
                     ->validate()->always(function ($children) {
-                        array_walk($children, array($this, 'evaluateChildren'));
+                        array_walk($children, [$this, 'evaluateChildren']);
 
                         return $children;
                     })->end()

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -17,7 +19,7 @@ final class MenuCompilerPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         $groups = $container->getParameter('core23.menu.groups');
 
@@ -28,7 +30,7 @@ final class MenuCompilerPass implements CompilerPassInterface
         $registry = $container->getDefinition('sonata.block.menu.registry');
 
         foreach ($groups as $name => $items) {
-            $registry->addMethodCall('add', array($name));
+            $registry->addMethodCall('add', [$name]);
         }
     }
 }
