@@ -21,9 +21,9 @@
     "php": "^7.1",
     "knplabs/knp-menu": "^2.1",
     "sonata-project/block-bundle": "^3.8@dev",
-    "symfony/dependency-injection": "^2.8.6 || ^3.2 || ^4.0",
-    "symfony/expression-language": "^2.8.6 || ^3.2 || ^4.0",
-    "symfony/framework-bundle": "^2.8.6 || ^3.2 || ^4.0"
+    "symfony/dependency-injection": "^3.4 || ^4.0",
+    "symfony/expression-language": "^3.4 || ^4.0",
+    "symfony/framework-bundle": "^3.4 || ^4.0"
   },
   "require-dev": {
     "matthiasnoback/symfony-dependency-injection-test": "^1.1",
