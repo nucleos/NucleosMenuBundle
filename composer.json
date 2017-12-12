@@ -20,7 +20,7 @@
   "require": {
     "php": "^7.1",
     "knplabs/knp-menu": "^2.1",
-    "sonata-project/block-bundle": "^3.8@dev",
+    "sonata-project/block-bundle": "^3.9",
     "symfony/dependency-injection": "^3.4 || ^4.0",
     "symfony/expression-language": "^3.4 || ^4.0",
     "symfony/framework-bundle": "^3.4 || ^4.0"
