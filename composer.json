@@ -29,10 +29,6 @@
     "matthiasnoback/symfony-dependency-injection-test": "^1.1",
     "symfony/phpunit-bridge": "^4.0"
   },
-  "conflict": {
-    "symfony/http-foundation": "<2.8",
-    "symfony/http-kernel": "<2.8"
-  },
   "autoload": {
     "psr-4": {
       "Core23\\MenuBundle\\": "src/"
