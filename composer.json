@@ -23,7 +23,8 @@
     "sonata-project/block-bundle": "^3.9",
     "symfony/dependency-injection": "^3.4 || ^4.0",
     "symfony/expression-language": "^3.4 || ^4.0",
-    "symfony/framework-bundle": "^3.4 || ^4.0"
+    "symfony/framework-bundle": "^3.4 || ^4.0",
+    "symfony/translation": "^3.4 || ^4.0"
   },
   "require-dev": {
     "matthiasnoback/symfony-dependency-injection-test": "^2.3",
