@@ -1,51 +1,61 @@
 {
-  "name": "core23/menu-bundle",
-  "type": "symfony-bundle",
-  "description": "This bundle provides services for defining static menus for sonata.",
-  "keywords": [
-    "symfony",
-    "sonata",
-    "bundle",
-    "menu",
-    "generator"
-  ],
-  "homepage": "https://core23.de",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Christian Gripp",
-      "email": "mail@core23.de"
+    "name": "core23/menu-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle provides services for defining static menus for sonata.",
+    "keywords": [
+        "symfony",
+        "sonata",
+        "bundle",
+        "menu",
+        "generator"
+    ],
+    "homepage": "https://core23.de",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Gripp",
+            "email": "mail@core23.de"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "knplabs/knp-menu": "^2.1",
+        "sonata-project/block-bundle": "^3.9",
+        "symfony/dependency-injection": "^3.4 || ^4.0",
+        "symfony/expression-language": "^3.4 || ^4.0",
+        "symfony/framework-bundle": "^3.4 || ^4.0",
+        "symfony/translation": "^3.4 || ^4.0"
+    },
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.2",
+        "matthiasnoback/symfony-dependency-injection-test": "^2.3",
+        "sllh/composer-lint": "^1.0",
+        "symfony/phpunit-bridge": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core23\\MenuBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Core23\\MenuBundle\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@composer bin all install --ansi"
+        ],
+        "post-update-cmd": [
+            "@composer bin all update --ansi"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
     }
-  ],
-  "require": {
-    "php": "^7.1",
-    "knplabs/knp-menu": "^2.1",
-    "sonata-project/block-bundle": "^3.9",
-    "symfony/dependency-injection": "^3.4 || ^4.0",
-    "symfony/expression-language": "^3.4 || ^4.0",
-    "symfony/framework-bundle": "^3.4 || ^4.0",
-    "symfony/translation": "^3.4 || ^4.0"
-  },
-  "require-dev": {
-    "matthiasnoback/symfony-dependency-injection-test": "^2.3",
-    "symfony/phpunit-bridge": "^4.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Core23\\MenuBundle\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Core23\\MenuBundle\\Tests\\": "tests/"
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "0.x-dev"
-    }
-  },
-  "config": {
-    "sort-packages": true
-  }
 }
