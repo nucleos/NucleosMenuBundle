@@ -21,7 +21,7 @@ final class MenuCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container): void
     {
-        $groups = $container->getParameter('core23.menu.groups');
+        $groups = $container->getParameter('core23_menu.groups');
 
         if (!is_array($groups) || 0 === count($groups)) {
             return;
