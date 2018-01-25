@@ -17,7 +17,7 @@ This bundle provides services for defining static menus for sonata.
 ### Installation
 
 ```
-php composer.phar require core23/menu-bundle
+composer require core23/menu-bundle
 ```
 
 ### Enabling the bundle
