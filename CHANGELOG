@@ -1,1 +1,12 @@
+27/01/2018 10:28  0.2.0  Changed service bundle prefix
+2bb3359 Improved documentation
+d7d91db Adding stages to travis build
+7aa3497 Replaced composer.phar with composer in docs
+7554b2a Use correct bundle prefix for serivices and parameters
+97639cc Ignore vendor-bin when calling lint
+c95c972 Use weak vendors mode
+d627d5d Added rmt tool
+e486818 Normalize composer.json file
+0e55ec3 Cleanup PHPStan ignores
+9e9087d Added dev tools via composer-bin plugin
 07/01/2018 20:11  0.1.0  Initial release
