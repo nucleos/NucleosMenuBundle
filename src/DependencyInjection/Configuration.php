@@ -42,7 +42,6 @@ final class Configuration implements ConfigurationInterface
         $menuNode = $node
             ->children()
                 ->arrayNode('groups')
-
                     ->useAttributeAsKey('id')
                     ->prototype('array')
                         ->fixXmlConfig('attribute')
