@@ -141,7 +141,7 @@ final class ConfigBuilder
      *
      * @return string
      */
-    private function trans($id, array $parameters = [], $domain = null, $locale = null): string
+    private function trans(string $id, array $parameters = [], $domain = null, $locale = null): string
     {
         if (false === $domain) {
             return $id;
