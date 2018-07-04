@@ -22,7 +22,7 @@ final class ConfigProvider implements MenuProviderInterface
     private $builder;
 
     /**
-     * @var array
+     * @var array<string, mixed>
      */
     private $menus;
 
