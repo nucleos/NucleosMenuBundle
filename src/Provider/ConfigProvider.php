@@ -27,8 +27,6 @@ final class ConfigProvider implements MenuProviderInterface
     private $menus;
 
     /**
-     * ConfigProvider constructor.
-     *
      * @param ConfigBuilder $builder
      * @param array         $menuIds
      */

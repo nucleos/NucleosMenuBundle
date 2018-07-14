@@ -28,8 +28,6 @@ final class ConfigBuilder
     private $translator;
 
     /**
-     * Builder constructor.
-     *
      * @param FactoryInterface    $factory
      * @param TranslatorInterface $translator
      */
