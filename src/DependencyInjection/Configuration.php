@@ -87,13 +87,13 @@ final class Configuration implements ConfigurationInterface
                     ->useAttributeAsKey('param')
                     ->prototype('scalar')->end()
                     ->validate()->ifTrue(function ($element) {
-                        return !is_array($element);
+                        return !\is_array($element);
                     })->thenInvalid('The routeParams element must be an array.')->end()
                 ->end()
                 ->variableNode('children')
                     ->defaultValue([])
                     ->validate()->ifTrue(function ($element) {
-                        return !is_array($element);
+                        return !\is_array($element);
                     })->thenInvalid('The children element must be an array.')->end()
                     ->validate()->always(function ($children) {
                         array_walk($children, [$this, 'evaluateChildren']);

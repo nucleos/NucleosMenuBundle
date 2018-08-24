@@ -23,7 +23,7 @@ final class MenuCompilerPass implements CompilerPassInterface
     {
         $groups = $container->getParameter('core23_menu.groups');
 
-        if (!is_array($groups) || 0 === count($groups)) {
+        if (!\is_array($groups) || 0 === \count($groups)) {
             return;
         }
 

@@ -113,7 +113,7 @@ final class ConfigBuilder
                 ],
             ]);
 
-            if (count($item['children']) > 0) {
+            if (\count($item['children']) > 0) {
                 $label .= ' <b class="caret caret-menu"></b>';
                 $menuOptions = array_merge($menuOptions, $subMenuOptions, [
                     'label' => $label,
@@ -123,7 +123,7 @@ final class ConfigBuilder
             $subMenu = $this->factory->createItem($item['label'], $menuOptions);
             $menu->addChild($subMenu);
 
-            if (count($item['children']) > 0) {
+            if (\count($item['children']) > 0) {
                 $this->buildSubMenu($subMenu, $item['children']);
             }
         }
