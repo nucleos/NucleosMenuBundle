@@ -13,9 +13,6 @@ MenuBundle
 [![Code Climate](https://codeclimate.com/github/core23/MenuBundle/badges/gpa.svg)](https://codeclimate.com/github/core23/MenuBundle)
 [![Coverage Status](https://coveralls.io/repos/core23/MenuBundle/badge.svg)](https://coveralls.io/r/core23/MenuBundle)
 
-[![Donate to this project using Flattr](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/core23)
-[![Donate to this project using PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/gripp)
-
 This bundle provides services for defining static menus for sonata.
 
 ## Installation
