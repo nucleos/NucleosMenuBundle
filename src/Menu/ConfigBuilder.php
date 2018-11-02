@@ -120,7 +120,7 @@ final class ConfigBuilder
                 ]);
             }
 
-            $subMenu = $this->factory->createItem($item['label'], $menuOptions);
+            $subMenu = $this->factory->createItem($label, $menuOptions);
             $menu->addChild($subMenu);
 
             if (\count($item['children']) > 0) {
