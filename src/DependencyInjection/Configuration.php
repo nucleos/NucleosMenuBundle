@@ -24,12 +24,16 @@ final class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('core23_menu');
 
-        /** @var ArrayNodeDefinition $node */
-        $node = $treeBuilder->root('core23_menu');
+        // Keep compatibility with symfony/config < 4.2
+        if (!\method_exists($treeBuilder, 'getRootNode')) {
+            $rootNode = $treeBuilder->root('core23_menu');
+        } else {
+            $rootNode = $treeBuilder->getRootNode();
+        }
 
-        $this->addMenuSection($node);
+        $this->addMenuSection($rootNode);
 
         return $treeBuilder;
     }
@@ -121,8 +125,14 @@ final class Configuration implements ConfigurationInterface
      */
     private function getPathNode(string $name = ''): NodeInterface
     {
-        $treeBuilder = new TreeBuilder();
-        $definition  = $treeBuilder->root($name);
+        $treeBuilder = new TreeBuilder($name);
+
+        // Keep compatibility with symfony/config < 4.2
+        if (!\method_exists($treeBuilder, 'getRootNode')) {
+            $definition = $treeBuilder->root($name);
+        } else {
+            $definition = $treeBuilder->getRootNode();
+        }
 
         $this->buildPathNode($definition);
 
