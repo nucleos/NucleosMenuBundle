@@ -1,3 +1,20 @@
+30/12/2018 22:00  0.4.0  Removed symfony deprecations
+5aa7ce9 Fixed phpunit config for release command
+70fc4df Use asserts for type safe root config nodes
+1475759 Removed deprecation warnings
+bb0202e Removed deprecation warnings
+ee0229d Added platform workaround for php-cs-fixer tool
+0cdb555 Require latest phpunit bridge
+888e2e9 Removed sonata core-bundle dependency
+66f5be5 Require latest phpunit bridge
+a14b83e Travis: Test against PHP 7.3
+6e1ac48 Dropped support for PHP 7.1
+2bc3532 Fixed syntax error in editorconfig
+b38c9ed Moved test dependencies to vendor-bin
+e7f09ca Fixed translation of menu items
+54fbe18 Removed donation from README
+758d81f Updated release config
+2aed797 Updated style config
 23/09/2018 14:19  0.3.0  Added explicit dependencies
 ee8b18b Removed templating dependency
 3308149 Updated .editorconfig
