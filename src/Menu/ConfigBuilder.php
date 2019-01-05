@@ -134,7 +134,7 @@ final class ConfigBuilder
     /**
      * @param string            $id
      * @param array             $parameters
-     * @param string|null|false $domain
+     * @param string|false|null $domain
      * @param string|null       $locale
      *
      * @return string

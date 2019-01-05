@@ -27,7 +27,7 @@ final class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder('core23_menu');
 
         // Keep compatibility with symfony/config < 4.2
-        if (!\method_exists($treeBuilder, 'getRootNode')) {
+        if (!method_exists($treeBuilder, 'getRootNode')) {
             $rootNode = $treeBuilder->root('core23_menu');
         } else {
             $rootNode = $treeBuilder->getRootNode();
@@ -129,7 +129,7 @@ final class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder($name);
 
         // Keep compatibility with symfony/config < 4.2
-        if (!\method_exists($treeBuilder, 'getRootNode')) {
+        if (!method_exists($treeBuilder, 'getRootNode')) {
             $definition = $treeBuilder->root($name);
         } else {
             $definition = $treeBuilder->getRootNode();
