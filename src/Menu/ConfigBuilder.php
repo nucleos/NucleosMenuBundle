@@ -54,7 +54,7 @@ final class ConfigBuilder
             ],
         ], $options);
 
-        if (array_key_exists('attributes', $menu)) {
+        if (\array_key_exists('attributes', $menu)) {
             $menuOptions = array_merge($menuOptions, [
                 'childrenAttributes' => $menu['attributes'],
             ]);
@@ -62,7 +62,7 @@ final class ConfigBuilder
 
         $menuItem = $this->factory->createItem('main', $menuOptions);
 
-        if (array_key_exists('items', $menu)) {
+        if (\array_key_exists('items', $menu)) {
             $this->buildSubMenu($menuItem, $menu['items']);
         }
 
@@ -134,7 +134,7 @@ final class ConfigBuilder
     /**
      * @param string            $id
      * @param array             $parameters
-     * @param string|false|null $domain
+     * @param false|string|null $domain
      * @param string|null       $locale
      *
      * @return string

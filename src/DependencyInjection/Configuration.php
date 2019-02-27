@@ -62,7 +62,8 @@ final class Configuration implements ConfigurationInterface
                             ->arrayNode('items')
                                 ->useAttributeAsKey('id')
                                 ->defaultValue([])
-                                ->prototype('array');
+                                ->prototype('array')
+        ;
 
         $this->buildPathNode($menuNode);
 
