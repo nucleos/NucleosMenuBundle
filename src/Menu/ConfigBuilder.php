@@ -15,7 +15,7 @@ use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 
-final class ConfigBuilder
+final class ConfigBuilder implements ConfigBuilderInterface
 {
     /**
      * @var FactoryInterface
@@ -38,10 +38,7 @@ final class ConfigBuilder
     }
 
     /**
-     * @param array $menu
-     * @param array $options
-     *
-     * @return ItemInterface
+     * {@inheritdoc}
      */
     public function buildMenu(array $menu, array $options): ItemInterface
     {
