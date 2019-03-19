@@ -9,6 +9,9 @@ parameters:
         - vendor-bin/phpstan/vendor/phpstan/phpstan-strict-rules/rules.neon
 
     ignoreErrors:
+        # PHPUnit
+        - '#Parameter \#1 \$container of method Core23\\MenuBundle\\Core23MenuBundle::build\(\) expects Symfony\\Component\\DependencyInjection\\ContainerBuilder, PHPUnit\\Framework\\MockObject\\MockObject given.#'
+
         # Symfony DI
         - '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::fixXmlConfig\(\).#'
         - '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::addDefaultsIfNotSet\(\).#'
