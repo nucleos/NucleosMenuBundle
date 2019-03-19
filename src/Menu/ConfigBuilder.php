@@ -28,6 +28,11 @@ final class ConfigBuilder implements ConfigBuilderInterface
     private $translator;
 
     /**
+     * @var array
+     */
+    private $defaultOptions;
+
+    /**
      * @param FactoryInterface    $factory
      * @param TranslatorInterface $translator
      */
@@ -35,6 +40,24 @@ final class ConfigBuilder implements ConfigBuilderInterface
     {
         $this->factory    = $factory;
         $this->translator = $translator;
+
+        $this->defaultOptions = [
+            'attributes' => [
+                'class' => 'dropdown',
+            ],
+            'childrenAttributes' => [
+                'class' => 'dropdown-menu',
+            ],
+            'linkAttributes' => [
+                'class'       => 'dropdown-toggle',
+                'data-toggle' => 'dropdown',
+                'data-target' => '#',
+            ],
+            'extras' => [
+                'safe_label'         => true,
+                'translation_domain' => false,
+            ],
+        ];
     }
 
     /**
@@ -75,54 +98,8 @@ final class ConfigBuilder implements ConfigBuilderInterface
      */
     private function buildSubMenu(ItemInterface $menu, array $configItems, array $baseMenuOptions = []): ItemInterface
     {
-        $subMenuOptions = [
-            'attributes' => [
-                'class' => 'dropdown',
-            ],
-            'childrenAttributes' => [
-                'class' => 'dropdown-menu',
-            ],
-            'linkAttributes' => [
-                'class'       => 'dropdown-toggle',
-                'data-toggle' => 'dropdown',
-                'data-target' => '#',
-            ],
-            'extras' => [
-                'safe_label'         => true,
-                'translation_domain' => false,
-            ],
-        ];
-
         foreach ($configItems as $item) {
-            $label = $this->trans($item['label'], [], $item['label_catalogue']);
-
-            if (!empty($item['icon'])) {
-                $label = '<i class="'.$item['icon'].'"></i> '.$label;
-            }
-
-            $menuOptions = array_merge($baseMenuOptions, [
-                'route'           => $item['route'],
-                'routeParameters' => $item['routeParams'],
-                'linkAttributes'  => ['class' => $item['class']],
-                'extras'          => [
-                    'safe_label'         => true,
-                    'translation_domain' => false,
-                ],
-            ]);
-
-            if (\count($item['children']) > 0) {
-                $label .= ' <b class="caret caret-menu"></b>';
-                $menuOptions = array_merge($menuOptions, $subMenuOptions, [
-                    'label' => $label,
-                ]);
-            }
-
-            $subMenu = $this->factory->createItem($label, $menuOptions);
-            $menu->addChild($subMenu);
-
-            if (\count($item['children']) > 0) {
-                $this->buildSubMenu($subMenu, $item['children']);
-            }
+            $this->createItem($menu, $baseMenuOptions, $item);
         }
 
         return $menu;
@@ -143,5 +120,54 @@ final class ConfigBuilder implements ConfigBuilderInterface
         }
 
         return $this->translator->trans($id, $parameters, $domain, $locale);
+    }
+
+    /**
+     * @param ItemInterface $menu
+     * @param array         $baseMenuOptions
+     * @param array         $itemDefinition
+     */
+    private function createItem(ItemInterface $menu, array $baseMenuOptions, array $itemDefinition): void
+    {
+        $label = $this->trans($itemDefinition['label'], [], $itemDefinition['label_catalogue']);
+
+        if (!empty($itemDefinition['icon'])) {
+            $label = '<i class="'.$itemDefinition['icon'].'"></i> '.$label;
+        }
+
+        $menuOptions = self::getOptions($baseMenuOptions, $itemDefinition);
+
+        if (\count($itemDefinition['children']) > 0) {
+            $label       .= ' <b class="caret caret-menu"></b>';
+            $menuOptions = array_merge($menuOptions, $this->defaultOptions, [
+                'label' => $label,
+            ]);
+        }
+
+        $subMenu = $this->factory->createItem($label, $menuOptions);
+        $menu->addChild($subMenu);
+
+        if (\count($itemDefinition['children']) > 0) {
+            $this->buildSubMenu($subMenu, $itemDefinition['children']);
+        }
+    }
+
+    /**
+     * @param array $baseMenuOptions
+     * @param array $itemDefinition
+     *
+     * @return array
+     */
+    private static function getOptions(array $baseMenuOptions, array $itemDefinition): array
+    {
+        return array_merge($baseMenuOptions, [
+            'route'           => $itemDefinition['route'],
+            'routeParameters' => $itemDefinition['routeParams'],
+            'linkAttributes'  => ['class' => $itemDefinition['class']],
+            'extras'          => [
+                'safe_label'         => true,
+                'translation_domain' => false,
+            ],
+        ]);
     }
 }
