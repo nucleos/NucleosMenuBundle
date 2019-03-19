@@ -10,7 +10,9 @@
 namespace Core23\MenuBundle\Tests;
 
 use Core23\MenuBundle\Core23MenuBundle;
+use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class Core23MenuBundleTest extends TestCase
 {
@@ -19,5 +21,17 @@ class Core23MenuBundleTest extends TestCase
         $bundle = new Core23MenuBundle();
 
         $this->assertInstanceOf(Core23MenuBundle::class, $bundle);
+    }
+
+    public function testBuild(): void
+    {
+        $containerBuilder = $this->createMock(ContainerBuilder::class);
+
+        $containerBuilder->expects($this->once())->method('addCompilerPass')
+            ->with($this->isInstanceOf(MenuCompilerPass::class))
+        ;
+
+        $bundle = new Core23MenuBundle();
+        $bundle->build($containerBuilder);
     }
 }
