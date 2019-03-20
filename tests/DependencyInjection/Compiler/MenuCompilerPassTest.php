@@ -9,8 +9,55 @@
 
 namespace Core23\MenuBundle\Tests\DependencyInjection\Compiler;
 
+use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
 
 class MenuCompilerPassTest extends TestCase
 {
+    /**
+     * @var ContainerBuilder
+     */
+    private $container;
+
+    protected function setUp()
+    {
+        $this->container = new ContainerBuilder();
+    }
+
+    public function testProcess(): void
+    {
+        /** @var MockObject&Definition $definition */
+        $definition = $this->createMock(Definition::class);
+        $definition->expects($this->once())->method('addMethodCall')
+            ->with('add', ['main'])
+        ;
+
+        $this->container->setDefinition('sonata.block.menu.registry', $definition);
+        $this->container->setParameter('core23_menu.groups', [
+            'main' => [
+                'name'       => 'FooMenu',
+                'attributes' => [
+                    'class'    => 'my-class',
+                ],
+                'items' => [],
+            ],
+        ]);
+
+        $compiler = new MenuCompilerPass();
+        $compiler->process($this->container);
+    }
+
+    public function testProcessWithEmptyGroups(): void
+    {
+        $this->container->setParameter('core23_menu.groups', [
+        ]);
+
+        $compiler = new MenuCompilerPass();
+        $compiler->process($this->container);
+
+        $this->assertTrue(true);
+    }
 }
