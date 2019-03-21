@@ -10,7 +10,6 @@
 namespace Core23\MenuBundle\Tests\DependencyInjection\Compiler;
 
 use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -29,7 +28,6 @@ class MenuCompilerPassTest extends TestCase
 
     public function testProcess(): void
     {
-        /** @var MockObject&Definition $definition */
         $definition = $this->createMock(Definition::class);
         $definition->expects($this->once())->method('addMethodCall')
             ->with('add', ['main'])
