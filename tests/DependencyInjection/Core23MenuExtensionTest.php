@@ -11,15 +11,11 @@ namespace Core23\MenuBundle\Tests\DependencyInjection;
 
 use Core23\MenuBundle\DependencyInjection\Core23MenuExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
-use Symfony\Component\DependencyInjection\Definition;
 
 class Core23MenuExtensionTest extends AbstractExtensionTestCase
 {
     public function testLoadDefault(): void
     {
-        $mailerService = new Definition();
-        $this->setDefinition('core23_allinkl.mailer', $mailerService);
-
         $this->load([
             'groups' => [
                 'test' => [
