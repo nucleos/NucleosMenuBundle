@@ -106,20 +106,14 @@ final class ConfigBuilder implements ConfigBuilderInterface
     }
 
     /**
-     * @param string            $id
-     * @param array             $parameters
-     * @param false|string|null $domain
-     * @param string|null       $locale
+     * @param string $id
+     * @param string $domain
      *
      * @return string
      */
-    private function trans(string $id, array $parameters = [], $domain = null, $locale = null): string
+    private function trans(string $id, string $domain): string
     {
-        if (false === $domain) {
-            return $id;
-        }
-
-        return $this->translator->trans($id, $parameters, $domain, $locale);
+        return $this->translator->trans($id, [], $domain);
     }
 
     /**
@@ -129,15 +123,11 @@ final class ConfigBuilder implements ConfigBuilderInterface
      */
     private function createItem(ItemInterface $menu, array $baseMenuOptions, array $itemDefinition): void
     {
-        $label = $this->trans($itemDefinition['label'], [], $itemDefinition['label_catalogue']);
-
-        if (!empty($itemDefinition['icon'])) {
-            $label = '<i class="'.$itemDefinition['icon'].'"></i> '.$label;
-        }
+        $label = $this->createLabel($itemDefinition);
 
         $menuOptions = self::getOptions($baseMenuOptions, $itemDefinition);
 
-        if (\count($itemDefinition['children']) > 0) {
+        if (\array_key_exists('children', $itemDefinition) && \count($itemDefinition['children']) > 0) {
             $label       .= ' <b class="caret caret-menu"></b>';
             $menuOptions = array_merge($menuOptions, $this->defaultOptions, [
                 'label' => $label,
@@ -147,9 +137,29 @@ final class ConfigBuilder implements ConfigBuilderInterface
         $subMenu = $this->factory->createItem($label, $menuOptions);
         $menu->addChild($subMenu);
 
-        if (\count($itemDefinition['children']) > 0) {
+        if (\array_key_exists('children', $itemDefinition) && \count($itemDefinition['children']) > 0) {
             $this->buildSubMenu($subMenu, $itemDefinition['children']);
         }
+    }
+
+    /**
+     * @param array $itemDefinition
+     *
+     * @return string
+     */
+    private function createLabel(array $itemDefinition): string
+    {
+        $label = $itemDefinition['label'];
+
+        if (\array_key_exists('label_catalogue', $itemDefinition) && false !== $itemDefinition['label_catalogue']) {
+            $label = $this->trans($itemDefinition['label'], $itemDefinition['label_catalogue']);
+        }
+
+        if (!empty($itemDefinition['icon'])) {
+            $label = '<i class="'.$itemDefinition['icon'].'"></i> '.$label;
+        }
+
+        return $label;
     }
 
     /**
@@ -160,14 +170,20 @@ final class ConfigBuilder implements ConfigBuilderInterface
      */
     private static function getOptions(array $baseMenuOptions, array $itemDefinition): array
     {
-        return array_merge($baseMenuOptions, [
+        $options = array_merge($baseMenuOptions, [
             'route'           => $itemDefinition['route'],
-            'routeParameters' => $itemDefinition['routeParams'],
-            'linkAttributes'  => ['class' => $itemDefinition['class']],
+            'routeParameters' => $itemDefinition['routeParams'] ?? [],
+            'linkAttributes'  => [],
             'extras'          => [
                 'safe_label'         => true,
                 'translation_domain' => false,
             ],
         ]);
+
+        if (\array_key_exists('class', $itemDefinition)) {
+            $options['linkAttributes']['class'] = $itemDefinition['class'];
+        }
+
+        return $options;
     }
 }
