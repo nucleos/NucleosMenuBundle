@@ -32,8 +32,8 @@ class ConfigBuilderTest extends TestCase
     {
         $builder = new ConfigBuilder(
             $this->factory->reveal(),
-            $this->translator->reveal(),
-            );
+            $this->translator->reveal()
+        );
 
         $this->assertInstanceOf(ConfigBuilderInterface::class, $builder);
     }
@@ -42,8 +42,8 @@ class ConfigBuilderTest extends TestCase
     {
         $builder = new ConfigBuilder(
             $this->factory->reveal(),
-            $this->translator->reveal(),
-            );
+            $this->translator->reveal()
+        );
 
         $mainMenu = $this->prophesize(ItemInterface::class);
 
@@ -65,8 +65,8 @@ class ConfigBuilderTest extends TestCase
     {
         $builder = new ConfigBuilder(
             $this->factory->reveal(),
-            $this->translator->reveal(),
-            );
+            $this->translator->reveal()
+        );
 
         $mainMenu = $this->prophesize(ItemInterface::class);
 
@@ -91,8 +91,8 @@ class ConfigBuilderTest extends TestCase
     {
         $builder = new ConfigBuilder(
             $this->factory->reveal(),
-            $this->translator->reveal(),
-            );
+            $this->translator->reveal()
+        );
 
         $mainMenu = $this->prophesize(ItemInterface::class);
 
@@ -118,8 +118,8 @@ class ConfigBuilderTest extends TestCase
     {
         $builder = new ConfigBuilder(
             $this->factory->reveal(),
-            $this->translator->reveal(),
-            );
+            $this->translator->reveal()
+        );
 
         $item = $this->prophesize(ItemInterface::class);
 
@@ -169,8 +169,8 @@ class ConfigBuilderTest extends TestCase
     {
         $builder = new ConfigBuilder(
             $this->factory->reveal(),
-            $this->translator->reveal(),
-            );
+            $this->translator->reveal()
+        );
 
         $item = $this->prophesize(ItemInterface::class);
 
@@ -219,8 +219,8 @@ class ConfigBuilderTest extends TestCase
     {
         $builder = new ConfigBuilder(
             $this->factory->reveal(),
-            $this->translator->reveal(),
-            );
+            $this->translator->reveal()
+        );
 
         $item = $this->prophesize(ItemInterface::class);
 
@@ -265,8 +265,8 @@ class ConfigBuilderTest extends TestCase
     {
         $builder = new ConfigBuilder(
             $this->factory->reveal(),
-            $this->translator->reveal(),
-            );
+            $this->translator->reveal()
+        );
 
         $subitem = $this->prophesize(ItemInterface::class);
 
