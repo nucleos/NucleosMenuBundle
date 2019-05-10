@@ -35,7 +35,7 @@ class ConfigBuilderTest extends TestCase
             $this->translator->reveal()
         );
 
-        $this->assertInstanceOf(ConfigBuilderInterface::class, $builder);
+        static::assertInstanceOf(ConfigBuilderInterface::class, $builder);
     }
 
     public function testBuildMenuWithoutItems(): void
@@ -58,7 +58,7 @@ class ConfigBuilderTest extends TestCase
         ->willReturn($mainMenu)
         ;
 
-        $this->assertSame($mainMenu->reveal(), $builder->buildMenu([], []));
+        static::assertSame($mainMenu->reveal(), $builder->buildMenu([], []));
     }
 
     public function testBuildMenuWithOptions(): void
@@ -82,7 +82,7 @@ class ConfigBuilderTest extends TestCase
         ->willReturn($mainMenu)
         ;
 
-        $this->assertSame($mainMenu->reveal(), $builder->buildMenu([], [
+        static::assertSame($mainMenu->reveal(), $builder->buildMenu([], [
             'foo' => 'bar',
         ]));
     }
@@ -107,7 +107,7 @@ class ConfigBuilderTest extends TestCase
         ->willReturn($mainMenu)
         ;
 
-        $this->assertSame($mainMenu->reveal(), $builder->buildMenu([
+        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
             'attributes' => [
                 'attr-foo' => 'custom',
             ],
@@ -151,7 +151,7 @@ class ConfigBuilderTest extends TestCase
         ->willReturn($item)
         ;
 
-        $this->assertSame($mainMenu->reveal(), $builder->buildMenu([
+        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
             'items' => [
                 [
                     'label'       => 'my-label',
@@ -204,7 +204,7 @@ class ConfigBuilderTest extends TestCase
             ->willReturn('My label')
         ;
 
-        $this->assertSame($mainMenu->reveal(), $builder->buildMenu([
+        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
             'items' => [
                 [
                     'label'           => 'my-label',
@@ -250,7 +250,7 @@ class ConfigBuilderTest extends TestCase
         ->willReturn($item)
         ;
 
-        $this->assertSame($mainMenu->reveal(), $builder->buildMenu([
+        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
             'items' => [
                 [
                     'label' => 'my-label',
@@ -322,7 +322,7 @@ class ConfigBuilderTest extends TestCase
         ->willReturn($item)
         ;
 
-        $this->assertSame($mainMenu->reveal(), $builder->buildMenu([
+        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
             'items' => [
                 [
                     'label'       => 'my-label',

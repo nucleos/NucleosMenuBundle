@@ -29,7 +29,7 @@ class MenuCompilerPassTest extends TestCase
     public function testProcess(): void
     {
         $definition = $this->createMock(Definition::class);
-        $definition->expects($this->once())->method('addMethodCall')
+        $definition->expects(static::once())->method('addMethodCall')
             ->with('add', ['main'])
         ;
 
@@ -56,6 +56,6 @@ class MenuCompilerPassTest extends TestCase
         $compiler = new MenuCompilerPass();
         $compiler->process($this->container);
 
-        $this->assertTrue(true);
+        static::assertTrue(true);
     }
 }
