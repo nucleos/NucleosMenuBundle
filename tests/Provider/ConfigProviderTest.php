@@ -34,7 +34,7 @@ class ConfigProviderTest extends TestCase
             'foo' => ['name' => 'foo'],
             'bar' => ['name' => 'bar'],
         ]);
-        $this->assertSame($menu->reveal(), $configProvider->get('foo', ['a' => 'b']));
+        static::assertSame($menu->reveal(), $configProvider->get('foo', ['a' => 'b']));
     }
 
     public function testGetDoesNotExist(): void
@@ -55,7 +55,7 @@ class ConfigProviderTest extends TestCase
             'bar' => ['name' => 'bar'],
         ]);
 
-        $this->assertTrue($configProvider->has('foo'));
+        static::assertTrue($configProvider->has('foo'));
     }
 
     public function testHasNot(): void
@@ -65,6 +65,6 @@ class ConfigProviderTest extends TestCase
             'bar' => ['name' => 'bar'],
         ]);
 
-        $this->assertFalse($configProvider->has('baz'));
+        static::assertFalse($configProvider->has('baz'));
     }
 }
