@@ -1,3 +1,29 @@
+11/06/2019 19:42  1.0.0  First stable
+0f61427 [BUILD] Replaced deprecated "weak_vendors" option
+536eb16 Added GitHub sponsoring information
+aa23689 [PATCH] Fixed CS
+b07bee0 [BUILD] Updated export-ignore files
+543c256 [BUILD] Updated build tools
+14e5fb7 [BUILD] Removed dependency stage from build matrix
+34fb1fd [TEST] Fixed CS
+589583c [TEST] Increased test converage
+08ef462 [PATCH] Fixed empty default values in ConfigBuilder
+98e478a [TEST] Removed wrong test code
+cab5f50 [BUILD] Removed current copyright date
+2882a3c [BUILD] Cleanup phpstan errors
+557ee5b [BUILD] Added more tests
+6ac563d [BUILD] Fixed phpstan ignore list
+fe4be44 [BUILD] Added more tests
+7de31d6 [PATCH] Minor internal code refactoring
+a54e83d [BUILD] Added more tests
+00c98a2 [MINOR] Extracted ConfigBuilderInterface
+d508c83 [BUILD] Added weak_vendors when calling phpunit
+22aac45 [PATCH] Updated CS Fixer config and run
+517ee59 [BUILD] Updated phpstan version
+62651a5 [BUILD] Fixed symfony test setup
+0ac1e73 [MINOR] Removed support for outdated symfony versions
+93a90a0 Updated cs-fixer config
+7170ba6 Fixed CS
 30/12/2018 22:00  0.4.0  Removed symfony deprecations
 5aa7ce9 Fixed phpunit config for release command
 70fc4df Use asserts for type safe root config nodes
