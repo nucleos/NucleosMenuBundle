@@ -14,7 +14,7 @@ use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class Core23MenuBundleTest extends TestCase
+final class Core23MenuBundleTest extends TestCase
 {
     public function testItIsInstantiable(): void
     {

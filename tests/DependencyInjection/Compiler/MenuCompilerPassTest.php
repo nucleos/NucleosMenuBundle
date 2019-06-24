@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
-class MenuCompilerPassTest extends TestCase
+final class MenuCompilerPassTest extends TestCase
 {
     /**
      * @var ContainerBuilder
