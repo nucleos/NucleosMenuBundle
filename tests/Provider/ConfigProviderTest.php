@@ -15,7 +15,7 @@ use InvalidArgumentException;
 use Knp\Menu\ItemInterface;
 use PHPUnit\Framework\TestCase;
 
-class ConfigProviderTest extends TestCase
+final class ConfigProviderTest extends TestCase
 {
     private $configBuilder;
 

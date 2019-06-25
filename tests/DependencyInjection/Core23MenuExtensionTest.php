@@ -12,7 +12,7 @@ namespace Core23\MenuBundle\Tests\DependencyInjection;
 use Core23\MenuBundle\DependencyInjection\Core23MenuExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 
-class Core23MenuExtensionTest extends AbstractExtensionTestCase
+final class Core23MenuExtensionTest extends AbstractExtensionTestCase
 {
     public function testLoadDefault(): void
     {

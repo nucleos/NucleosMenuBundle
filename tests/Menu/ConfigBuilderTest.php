@@ -16,7 +16,7 @@ use Knp\Menu\ItemInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Translation\TranslatorInterface;
 
-class ConfigBuilderTest extends TestCase
+final class ConfigBuilderTest extends TestCase
 {
     private $factory;
 
