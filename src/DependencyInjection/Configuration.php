@@ -39,9 +39,6 @@ final class Configuration implements ConfigurationInterface
         return $treeBuilder;
     }
 
-    /**
-     * @param ArrayNodeDefinition $node
-     */
     private function addMenuSection(ArrayNodeDefinition $node): void
     {
         $menuNode = $node
@@ -75,9 +72,6 @@ final class Configuration implements ConfigurationInterface
         ;
     }
 
-    /**
-     * @param NodeDefinition $node
-     */
     private function buildPathNode(NodeDefinition $node): void
     {
         $node
@@ -111,20 +105,11 @@ final class Configuration implements ConfigurationInterface
             ;
     }
 
-    /**
-     * @param array  $child
-     * @param string $name
-     */
     private function evaluateChildren(array &$child, string $name): void
     {
         $child = $this->getPathNode($name)->finalize($child);
     }
 
-    /**
-     * @param string $name
-     *
-     * @return NodeInterface
-     */
     private function getPathNode(string $name = ''): NodeInterface
     {
         $treeBuilder = new TreeBuilder($name);

@@ -28,10 +28,6 @@ final class ConfigProvider implements MenuProviderInterface
      */
     private $menus;
 
-    /**
-     * @param ConfigBuilderInterface $builder
-     * @param array                  $menuIds
-     */
     public function __construct(ConfigBuilderInterface $builder, array $menuIds)
     {
         $this->builder = $builder;
