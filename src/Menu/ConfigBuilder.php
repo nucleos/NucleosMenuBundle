@@ -32,10 +32,6 @@ final class ConfigBuilder implements ConfigBuilderInterface
      */
     private $defaultOptions;
 
-    /**
-     * @param FactoryInterface    $factory
-     * @param TranslatorInterface $translator
-     */
     public function __construct(FactoryInterface $factory, TranslatorInterface $translator)
     {
         $this->factory    = $factory;
@@ -89,13 +85,6 @@ final class ConfigBuilder implements ConfigBuilderInterface
         return $menuItem;
     }
 
-    /**
-     * @param ItemInterface $menu
-     * @param array         $configItems
-     * @param array         $baseMenuOptions
-     *
-     * @return ItemInterface
-     */
     private function buildSubMenu(ItemInterface $menu, array $configItems, array $baseMenuOptions = []): ItemInterface
     {
         foreach ($configItems as $item) {
@@ -105,22 +94,11 @@ final class ConfigBuilder implements ConfigBuilderInterface
         return $menu;
     }
 
-    /**
-     * @param string $id
-     * @param string $domain
-     *
-     * @return string
-     */
     private function trans(string $id, string $domain): string
     {
         return $this->translator->trans($id, [], $domain);
     }
 
-    /**
-     * @param ItemInterface $menu
-     * @param array         $baseMenuOptions
-     * @param array         $itemDefinition
-     */
     private function createItem(ItemInterface $menu, array $baseMenuOptions, array $itemDefinition): void
     {
         $label = $this->createLabel($itemDefinition);
@@ -142,11 +120,6 @@ final class ConfigBuilder implements ConfigBuilderInterface
         }
     }
 
-    /**
-     * @param array $itemDefinition
-     *
-     * @return string
-     */
     private function createLabel(array $itemDefinition): string
     {
         $label = $itemDefinition['label'];
@@ -162,12 +135,6 @@ final class ConfigBuilder implements ConfigBuilderInterface
         return $label;
     }
 
-    /**
-     * @param array $baseMenuOptions
-     * @param array $itemDefinition
-     *
-     * @return array
-     */
     private static function getOptions(array $baseMenuOptions, array $itemDefinition): array
     {
         $options = array_merge($baseMenuOptions, [

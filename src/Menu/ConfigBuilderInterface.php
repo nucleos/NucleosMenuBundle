@@ -13,11 +13,5 @@ use Knp\Menu\ItemInterface;
 
 interface ConfigBuilderInterface
 {
-    /**
-     * @param array $menu
-     * @param array $options
-     *
-     * @return ItemInterface
-     */
     public function buildMenu(array $menu, array $options): ItemInterface;
 }
