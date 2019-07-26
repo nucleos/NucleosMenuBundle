@@ -30,7 +30,7 @@ final class Core23MenuExtension extends Extension
         $config        = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('core23_menu.groups', array_combine(
-            array_map(function ($name) {
+            array_map(static function ($name) {
                 return sprintf('static_%s', $name);
             }, array_keys($config['groups'])),
             $config['groups']
