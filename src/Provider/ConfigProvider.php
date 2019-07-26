@@ -34,9 +34,6 @@ final class ConfigProvider implements MenuProviderInterface
         $this->menus   = $menuIds;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function get($name, array $options = []): ItemInterface
     {
         if (!$this->has($name)) {
@@ -46,9 +43,6 @@ final class ConfigProvider implements MenuProviderInterface
         return $this->builder->buildMenu($this->menus[$name], $options);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function has($name, array $options = []): bool
     {
         return isset($this->menus[$name]);
