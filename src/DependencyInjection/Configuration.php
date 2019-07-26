@@ -19,9 +19,6 @@ use Symfony\Component\Config\Definition\NodeInterface;
 
 final class Configuration implements ConfigurationInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('core23_menu');

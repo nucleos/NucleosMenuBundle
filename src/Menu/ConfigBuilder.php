@@ -56,9 +56,6 @@ final class ConfigBuilder implements ConfigBuilderInterface
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function buildMenu(array $menu, array $options): ItemInterface
     {
         $menuOptions = array_merge_recursive([
