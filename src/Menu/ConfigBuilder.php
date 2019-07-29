@@ -125,7 +125,7 @@ final class ConfigBuilder implements ConfigBuilderInterface
             $label = $this->trans($itemDefinition['label'], $itemDefinition['label_catalogue']);
         }
 
-        if (!empty($itemDefinition['icon'])) {
+        if (\array_key_exists('icon', $itemDefinition) && \is_string($itemDefinition['icon'])) {
             $label = '<i class="'.$itemDefinition['icon'].'"></i> '.$label;
         }
 
