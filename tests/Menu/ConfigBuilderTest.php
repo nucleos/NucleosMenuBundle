@@ -10,7 +10,6 @@
 namespace Core23\MenuBundle\Tests\Menu;
 
 use Core23\MenuBundle\Menu\ConfigBuilder;
-use Core23\MenuBundle\Menu\ConfigBuilderInterface;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use PHPUnit\Framework\TestCase;
@@ -26,16 +25,6 @@ final class ConfigBuilderTest extends TestCase
     {
         $this->factory         = $this->prophesize(FactoryInterface::class);
         $this->translator      = $this->prophesize(TranslatorInterface::class);
-    }
-
-    public function testItIsInstantiable(): void
-    {
-        $builder = new ConfigBuilder(
-            $this->factory->reveal(),
-            $this->translator->reveal()
-        );
-
-        static::assertInstanceOf(ConfigBuilderInterface::class, $builder);
     }
 
     public function testBuildMenuWithoutItems(): void

@@ -11,6 +11,7 @@ namespace Core23\MenuBundle\Tests\DependencyInjection\Compiler;
 
 use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
@@ -21,9 +22,14 @@ final class MenuCompilerPassTest extends TestCase
      */
     private $container;
 
+    private $registryDefinitionMock;
+
     protected function setUp(): void
     {
+        $this->registryDefinitionMock = $this->prophesize(Definition::class);
+
         $this->container = new ContainerBuilder();
+        $this->container->setDefinition('sonata.block.menu.registry', $this->registryDefinitionMock->reveal());
     }
 
     public function testProcess(): void
@@ -56,6 +62,6 @@ final class MenuCompilerPassTest extends TestCase
         $compiler = new MenuCompilerPass();
         $compiler->process($this->container);
 
-        static::assertTrue(true);
+        $this->registryDefinitionMock->addMethodCall(Argument::any())->shouldNotHaveBeenCalled();
     }
 }
