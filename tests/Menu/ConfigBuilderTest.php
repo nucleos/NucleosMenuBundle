@@ -22,7 +22,7 @@ final class ConfigBuilderTest extends TestCase
 
     private $translator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->factory         = $this->prophesize(FactoryInterface::class);
         $this->translator      = $this->prophesize(TranslatorInterface::class);

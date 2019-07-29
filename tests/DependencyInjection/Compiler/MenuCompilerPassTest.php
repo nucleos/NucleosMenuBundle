@@ -21,7 +21,7 @@ final class MenuCompilerPassTest extends TestCase
      */
     private $container;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->container = new ContainerBuilder();
     }
