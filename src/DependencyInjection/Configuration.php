@@ -24,11 +24,8 @@ final class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder('core23_menu');
 
         // Keep compatibility with symfony/config < 4.2
-        if (!method_exists($treeBuilder, 'getRootNode')) {
-            $rootNode = $treeBuilder->root('core23_menu');
-        } else {
-            $rootNode = $treeBuilder->getRootNode();
-        }
+        $rootNode = method_exists(TreeBuilder::class, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root('core23_menu');
+
         \assert($rootNode instanceof ArrayNodeDefinition);
 
         $this->addMenuSection($rootNode);
@@ -112,11 +109,7 @@ final class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder($name);
 
         // Keep compatibility with symfony/config < 4.2
-        if (!method_exists($treeBuilder, 'getRootNode')) {
-            $definition = $treeBuilder->root($name);
-        } else {
-            $definition = $treeBuilder->getRootNode();
-        }
+        $definition = method_exists(TreeBuilder::class, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root($name);
         \assert($definition instanceof ArrayNodeDefinition);
 
         $this->buildPathNode($definition);

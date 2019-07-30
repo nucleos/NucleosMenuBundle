@@ -11,16 +11,17 @@ namespace Core23\MenuBundle\Tests;
 
 use Core23\MenuBundle\Core23MenuBundle;
 use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
+use Core23\MenuBundle\DependencyInjection\Core23MenuExtension;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 final class Core23MenuBundleTest extends TestCase
 {
-    public function testItIsInstantiable(): void
+    public function testGetContainerExtension(): void
     {
         $bundle = new Core23MenuBundle();
 
-        static::assertInstanceOf(Core23MenuBundle::class, $bundle);
+        static::assertInstanceOf(Core23MenuExtension::class, $bundle->getContainerExtension());
     }
 
     public function testBuild(): void
