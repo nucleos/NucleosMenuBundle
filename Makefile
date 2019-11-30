@@ -15,8 +15,5 @@ lint:
 checkdeps:
 	vendor/bin/composer-require-checker check composer.json
 
-phpstan:
-	vendor/bin/phpstan analyse
-
 test:
 	vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover build/logs/clover.xml
