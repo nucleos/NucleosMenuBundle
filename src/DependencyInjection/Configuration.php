@@ -23,8 +23,7 @@ final class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('core23_menu');
 
-        // Keep compatibility with symfony/config < 4.2
-        $rootNode = method_exists(TreeBuilder::class, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root('core23_menu');
+        $rootNode = $treeBuilder->getRootNode();
 
         \assert($rootNode instanceof ArrayNodeDefinition);
 
@@ -108,8 +107,8 @@ final class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder($name);
 
-        // Keep compatibility with symfony/config < 4.2
-        $definition = method_exists(TreeBuilder::class, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root($name);
+        $definition = $treeBuilder->getRootNode();
+
         \assert($definition instanceof ArrayNodeDefinition);
 
         $this->buildPathNode($definition);
