@@ -8,10 +8,8 @@ MenuBundle
 [![Monthly Downloads](https://poser.pugx.org/core23/menu-bundle/d/monthly)](https://packagist.org/packages/core23/menu-bundle)
 [![Daily Downloads](https://poser.pugx.org/core23/menu-bundle/d/daily)](https://packagist.org/packages/core23/menu-bundle)
 
-[![Build Status](https://travis-ci.org/core23/MenuBundle.svg)](https://travis-ci.org/core23/MenuBundle)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/MenuBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/core23/MenuBundle)
-[![Code Climate](https://codeclimate.com/github/core23/MenuBundle/badges/gpa.svg)](https://codeclimate.com/github/core23/MenuBundle)
-[![Coverage Status](https://coveralls.io/repos/core23/MenuBundle/badge.svg)](https://coveralls.io/r/core23/MenuBundle)
+[![Continuous Integration](https://github.com/core23/MenuBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/core23/MenuBundle/actions)
+[![Code Coverage](https://codecov.io/gh/core23/MenuBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/core23/MenuBundle)
 
 This bundle provides services for defining static menus for sonata.
 
@@ -50,11 +48,11 @@ core23_menu:
             name: 'Header'
             attributes:
                 id: 'header-nav'
-                
-        // Footer menu                
+
+        // Footer menu
         footer:
             name: 'Footer'
-            
+
         // Main menu
         main:
             name: 'Main'
