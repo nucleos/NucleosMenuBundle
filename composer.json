@@ -5,8 +5,10 @@
   "keywords": [
     "symfony",
     "sonata",
+    "sonata-block",
     "bundle",
     "menu",
+    "knpmenu",
     "generator"
   ],
   "homepage": "https://core23.de",
