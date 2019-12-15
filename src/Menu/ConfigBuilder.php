@@ -13,7 +13,7 @@ namespace Core23\MenuBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class ConfigBuilder implements ConfigBuilderInterface
 {
