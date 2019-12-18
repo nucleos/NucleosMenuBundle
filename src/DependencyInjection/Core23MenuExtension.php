@@ -18,6 +18,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 final class Core23MenuExtension extends Extension
 {
+    /**
+     * @param array<mixed> $configs
+     */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
@@ -27,7 +30,7 @@ final class Core23MenuExtension extends Extension
         $config        = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('core23_menu.groups', array_combine(
-            array_map(static function ($name) {
+            array_map(static function (string $name): string {
                 return sprintf('static_%s', $name);
             }, array_keys($config['groups'])),
             $config['groups']
