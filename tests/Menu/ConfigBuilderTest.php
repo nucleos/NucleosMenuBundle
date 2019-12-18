@@ -115,7 +115,9 @@ final class ConfigBuilderTest extends TestCase
         $item = $this->prophesize(ItemInterface::class);
 
         $mainMenu = $this->prophesize(ItemInterface::class);
-        $mainMenu->addChild($item);
+        $mainMenu->addChild($item)
+            ->shouldBeCalled()
+        ;
 
         $this->factory->createItem('main', [
             'attributes' => [
@@ -166,7 +168,9 @@ final class ConfigBuilderTest extends TestCase
         $item = $this->prophesize(ItemInterface::class);
 
         $mainMenu = $this->prophesize(ItemInterface::class);
-        $mainMenu->addChild($item);
+        $mainMenu->addChild($item)
+            ->shouldBeCalled()
+        ;
 
         $this->factory->createItem('main', [
             'attributes' => [
@@ -216,7 +220,9 @@ final class ConfigBuilderTest extends TestCase
         $item = $this->prophesize(ItemInterface::class);
 
         $mainMenu = $this->prophesize(ItemInterface::class);
-        $mainMenu->addChild($item);
+        $mainMenu->addChild($item)
+            ->shouldBeCalled()
+        ;
 
         $this->factory->createItem('main', [
             'attributes' => [
@@ -259,13 +265,12 @@ final class ConfigBuilderTest extends TestCase
             $this->translator->reveal()
         );
 
-        $subitem = $this->prophesize(ItemInterface::class);
-
         $item = $this->prophesize(ItemInterface::class);
-        $item->addChild($subitem);
 
         $mainMenu = $this->prophesize(ItemInterface::class);
-        $mainMenu->addChild($item);
+        $mainMenu->addChild($item)
+            ->shouldBeCalled()
+        ;
 
         $this->factory->createItem('main', [
             'attributes' => [
