@@ -1,0 +1,162 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeDefinition\\:\\:fixXmlConfig\\(\\)\\.$#"
+			count: 1
+			path: src/DependencyInjection/Configuration.php
+
+		-
+			message: "#^Call to an undefined method Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeDefinition\\:\\:addDefaultsIfNotSet\\(\\)\\.$#"
+			count: 1
+			path: src/DependencyInjection/Configuration.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\DependencyInjection\\\\Configuration\\:\\:evaluateChildren\\(\\) has parameter \\$child with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/DependencyInjection/Configuration.php
+
+		-
+			message: "#^Property Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:\\$defaultOptions type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) has parameter \\$menu with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) has parameter \\$baseMenuOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) has parameter \\$configItems with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) has parameter \\$menu with no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createItem\\(\\) has parameter \\$baseMenuOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createItem\\(\\) has parameter \\$itemDefinition with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createItem\\(\\) has parameter \\$menu with no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createLabel\\(\\) has parameter \\$itemDefinition with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:getOptions\\(\\) has parameter \\$baseMenuOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:getOptions\\(\\) has parameter \\$itemDefinition with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:getOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) has parameter \\$menu with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilderInterface.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilderInterface.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilderInterface.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:__construct\\(\\) has parameter \\$menuIds with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Provider/ConfigProvider.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Provider/ConfigProvider.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			count: 1
+			path: src/Provider/ConfigProvider.php
+
+		-
+			message: "#^Method Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:has\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Provider/ConfigProvider.php
+
+		-
+			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
+			count: 1
+			path: tests/BundleIntegrationTest.php
+
+		-
+			message: "#^Call to method request\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			count: 1
+			path: tests/BundleIntegrationTest.php
+
+		-
+			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			count: 1
+			path: tests/BundleIntegrationTest.php
+
+		-
+			message: "#^Property Core23\\\\MenuBundle\\\\Tests\\\\DependencyInjection\\\\Compiler\\\\MenuCompilerPassTest\\:\\:\\$registryDefinitionMock has no typehint specified\\.$#"
+			count: 1
+			path: tests/DependencyInjection/Compiler/MenuCompilerPassTest.php
+
+		-
+			message: "#^Property Core23\\\\MenuBundle\\\\Tests\\\\Menu\\\\ConfigBuilderTest\\:\\:\\$factory has no typehint specified\\.$#"
+			count: 1
+			path: tests/Menu/ConfigBuilderTest.php
+
+		-
+			message: "#^Property Core23\\\\MenuBundle\\\\Tests\\\\Menu\\\\ConfigBuilderTest\\:\\:\\$translator has no typehint specified\\.$#"
+			count: 1
+			path: tests/Menu/ConfigBuilderTest.php
+
+		-
+			message: "#^Property Core23\\\\MenuBundle\\\\Tests\\\\Provider\\\\ConfigProviderTest\\:\\:\\$configBuilder has no typehint specified\\.$#"
+			count: 1
+			path: tests/Provider/ConfigProviderTest.php
+
