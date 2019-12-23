@@ -14,6 +14,7 @@ namespace Core23\MenuBundle\Tests\DependencyInjection\Compiler;
 use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
@@ -24,6 +25,9 @@ final class MenuCompilerPassTest extends TestCase
      */
     private $container;
 
+    /**
+     * @var ObjectProphecy
+     */
     private $registryDefinitionMock;
 
     protected function setUp(): void
