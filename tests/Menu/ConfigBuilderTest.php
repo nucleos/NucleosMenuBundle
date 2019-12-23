@@ -15,12 +15,19 @@ use Core23\MenuBundle\Menu\ConfigBuilder;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class ConfigBuilderTest extends TestCase
 {
+    /**
+     * @var ObjectProphecy
+     */
     private $factory;
 
+    /**
+     * @var ObjectProphecy
+     */
     private $translator;
 
     protected function setUp(): void

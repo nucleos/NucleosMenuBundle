@@ -16,9 +16,13 @@ use Core23\MenuBundle\Provider\ConfigProvider;
 use InvalidArgumentException;
 use Knp\Menu\ItemInterface;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 
 final class ConfigProviderTest extends TestCase
 {
+    /**
+     * @var ObjectProphecy
+     */
     private $configBuilder;
 
     protected function setUp(): void
