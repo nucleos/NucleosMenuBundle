@@ -141,16 +141,6 @@ parameters:
 			path: tests/BundleIntegrationTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$factory of class Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder constructor expects Knp\\\\Menu\\\\FactoryInterface, object given\\.$#"
-			count: 7
-			path: tests/Menu/ConfigBuilderTest.php
-
-		-
-			message: "#^Parameter \\#2 \\$translator of class Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder constructor expects Symfony\\\\Contracts\\\\Translation\\\\TranslatorInterface, object given\\.$#"
-			count: 7
-			path: tests/Menu/ConfigBuilderTest.php
-
-		-
 			message: "#^Parameter \\#1 \\$builder of class Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider constructor expects Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface, object given\\.$#"
 			count: 4
 			path: tests/Provider/ConfigProviderTest.php

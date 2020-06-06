@@ -14,73 +14,75 @@ namespace Core23\MenuBundle\Tests\Menu;
 use Core23\MenuBundle\Menu\ConfigBuilder;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class ConfigBuilderTest extends TestCase
 {
     /**
-     * @var ObjectProphecy
+     * @var MockObject&FactoryInterface
      */
     private $factory;
 
     /**
-     * @var ObjectProphecy
+     * @var MockObject&TranslatorInterface
      */
     private $translator;
 
     protected function setUp(): void
     {
-        $this->factory         = $this->prophesize(FactoryInterface::class);
-        $this->translator      = $this->prophesize(TranslatorInterface::class);
+        $this->factory         = $this->createMock(FactoryInterface::class);
+        $this->translator      = $this->createMock(TranslatorInterface::class);
     }
 
     public function testBuildMenuWithoutItems(): void
     {
         $builder = new ConfigBuilder(
-            $this->factory->reveal(),
-            $this->translator->reveal()
+            $this->factory,
+            $this->translator
         );
 
-        $mainMenu = $this->prophesize(ItemInterface::class);
+        $mainMenu = $this->createMock(ItemInterface::class);
 
-        $this->factory->createItem('main', [
-            'attributes' => [
-                'class' => 'nav',
-            ],
-            'childrenAttributes' => [
-                'class' => 'nav nav-pills',
-            ],
-        ])
-        ->willReturn($mainMenu)
+        $this->factory->method('createItem')
+            ->with('main', [
+                'attributes' => [
+                    'class' => 'nav',
+                ],
+                'childrenAttributes' => [
+                    'class' => 'nav nav-pills',
+                ],
+            ])
+            ->willReturn($mainMenu)
         ;
 
-        static::assertSame($mainMenu->reveal(), $builder->buildMenu([], []));
+        static::assertSame($mainMenu, $builder->buildMenu([], []));
     }
 
     public function testBuildMenuWithOptions(): void
     {
         $builder = new ConfigBuilder(
-            $this->factory->reveal(),
-            $this->translator->reveal()
+            $this->factory,
+            $this->translator
         );
 
-        $mainMenu = $this->prophesize(ItemInterface::class);
+        $mainMenu = $this->createMock(ItemInterface::class);
 
-        $this->factory->createItem('main', [
-            'attributes' => [
-                'class' => 'nav',
-            ],
-            'childrenAttributes' => [
-                'class' => 'nav nav-pills',
-            ],
-            'foo' => 'bar',
-        ])
-        ->willReturn($mainMenu)
+        $this->factory->method('createItem')
+            ->with('main', [
+                'attributes' => [
+                    'class' => 'nav',
+                ],
+                'childrenAttributes' => [
+                    'class' => 'nav nav-pills',
+                ],
+                'foo' => 'bar',
+            ])
+            ->willReturn($mainMenu)
         ;
 
-        static::assertSame($mainMenu->reveal(), $builder->buildMenu([], [
+        static::assertSame($mainMenu, $builder->buildMenu([], [
             'foo' => 'bar',
         ]));
     }
@@ -88,24 +90,25 @@ final class ConfigBuilderTest extends TestCase
     public function testBuildMenuWithMenuAttributes(): void
     {
         $builder = new ConfigBuilder(
-            $this->factory->reveal(),
-            $this->translator->reveal()
+            $this->factory,
+            $this->translator
         );
 
-        $mainMenu = $this->prophesize(ItemInterface::class);
+        $mainMenu = $this->createMock(ItemInterface::class);
 
-        $this->factory->createItem('main', [
-            'attributes' => [
-                'class' => 'nav',
-            ],
-            'childrenAttributes' => [
-                'attr-foo' => 'custom',
-            ],
-        ])
-        ->willReturn($mainMenu)
-        ;
+        $this->factory->method('createItem')
+            ->with('main', [
+                'attributes' => [
+                    'class' => 'nav',
+                ],
+                'childrenAttributes' => [
+                    'attr-foo' => 'custom',
+                ],
+            ])
+            ->willReturn($mainMenu)
+            ;
 
-        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
+        static::assertSame($mainMenu, $builder->buildMenu([
             'attributes' => [
                 'attr-foo' => 'custom',
             ],
@@ -115,43 +118,45 @@ final class ConfigBuilderTest extends TestCase
     public function testBuildMenuWithItems(): void
     {
         $builder = new ConfigBuilder(
-            $this->factory->reveal(),
-            $this->translator->reveal()
+            $this->factory,
+            $this->translator
         );
 
-        $item = $this->prophesize(ItemInterface::class);
+        $item = $this->createMock(ItemInterface::class);
 
-        $mainMenu = $this->prophesize(ItemInterface::class);
-        $mainMenu->addChild($item)
-            ->shouldBeCalled()
+        $mainMenu = $this->createMock(ItemInterface::class);
+        $mainMenu->expects(static::once())->method('addChild')
+            ->with($item)
         ;
 
-        $this->factory->createItem('main', [
-            'attributes' => [
-                'class' => 'nav',
-            ],
-            'childrenAttributes' => [
-                'class' => 'nav nav-pills',
-            ],
-        ])
-        ->willReturn($mainMenu)
-        ;
+        $this->factory->expects(static::at(0))->method('createItem')
+            ->with('main', [
+                'attributes' => [
+                    'class' => 'nav',
+                ],
+                'childrenAttributes' => [
+                    'class' => 'nav nav-pills',
+                ],
+            ])
+            ->willReturn($mainMenu)
+            ;
 
-        $this->factory->createItem('my-label', [
-            'route'           => 'my-route',
-            'routeParameters' => [
-                'paramKey' => 'value',
-            ],
-            'linkAttributes'  => ['class' => 'my-class'],
-            'extras'          => [
-                'safe_label'         => true,
-                'translation_domain' => false,
-            ],
-        ])
-        ->willReturn($item)
-        ;
+        $this->factory->expects(static::at(1))->method('createItem')
+            ->with('my-label', [
+                'route'           => 'my-route',
+                'routeParameters' => [
+                    'paramKey' => 'value',
+                ],
+                'linkAttributes'  => ['class' => 'my-class'],
+                'extras'          => [
+                    'safe_label'         => true,
+                    'translation_domain' => false,
+                ],
+            ])
+            ->willReturn($item)
+            ;
 
-        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
+        static::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
                 [
                     'label'       => 'my-label',
@@ -168,45 +173,48 @@ final class ConfigBuilderTest extends TestCase
     public function testBuildMenuWithTranslation(): void
     {
         $builder = new ConfigBuilder(
-            $this->factory->reveal(),
-            $this->translator->reveal()
+            $this->factory,
+            $this->translator
         );
 
-        $item = $this->prophesize(ItemInterface::class);
+        $item = $this->createMock(ItemInterface::class);
 
-        $mainMenu = $this->prophesize(ItemInterface::class);
-        $mainMenu->addChild($item)
-            ->shouldBeCalled()
+        $mainMenu = $this->createMock(ItemInterface::class);
+        $mainMenu->expects(static::once())->method('addChild')
+            ->with($item)
         ;
 
-        $this->factory->createItem('main', [
-            'attributes' => [
-                'class' => 'nav',
-            ],
-            'childrenAttributes' => [
-                'class' => 'nav nav-pills',
-            ],
-        ])
-        ->willReturn($mainMenu)
-        ;
+        $this->factory->expects(static::at(0))->method('createItem')
+            ->with('main', [
+                'attributes' => [
+                    'class' => 'nav',
+                ],
+                'childrenAttributes' => [
+                    'class' => 'nav nav-pills',
+                ],
+            ])
+            ->willReturn($mainMenu)
+            ;
 
-        $this->factory->createItem('My label', [
-            'route'           => 'my-route',
-            'routeParameters' => [],
-            'linkAttributes'  => [],
-            'extras'          => [
-                'safe_label'         => true,
-                'translation_domain' => false,
-            ],
-        ])
-        ->willReturn($item)
-        ;
+        $this->factory->expects(static::at(1))->method('createItem')
+            ->with('My label', [
+                'route'           => 'my-route',
+                'routeParameters' => [],
+                'linkAttributes'  => [],
+                'extras'          => [
+                    'safe_label'         => true,
+                    'translation_domain' => false,
+                ],
+            ])
+            ->willReturn($item)
+            ;
 
-        $this->translator->trans('my-label', [], 'App')
+        $this->translator->method('trans')
+            ->with('my-label', [], 'App')
             ->willReturn('My label')
         ;
 
-        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
+        static::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
                 [
                     'label'           => 'my-label',
@@ -220,41 +228,43 @@ final class ConfigBuilderTest extends TestCase
     public function testBuildMenuWithIcon(): void
     {
         $builder = new ConfigBuilder(
-            $this->factory->reveal(),
-            $this->translator->reveal()
+            $this->factory,
+            $this->translator
         );
 
-        $item = $this->prophesize(ItemInterface::class);
+        $item = $this->createMock(ItemInterface::class);
 
-        $mainMenu = $this->prophesize(ItemInterface::class);
-        $mainMenu->addChild($item)
-            ->shouldBeCalled()
+        $mainMenu = $this->createMock(ItemInterface::class);
+        $mainMenu->expects(static::once())->method('addChild')
+            ->with($item)
         ;
 
-        $this->factory->createItem('main', [
-            'attributes' => [
-                'class' => 'nav',
-            ],
-            'childrenAttributes' => [
-                'class' => 'nav nav-pills',
-            ],
-        ])
-        ->willReturn($mainMenu)
-        ;
+        $this->factory->expects(static::at(0))->method('createItem')
+            ->with('main', [
+                'attributes' => [
+                    'class' => 'nav',
+                ],
+                'childrenAttributes' => [
+                    'class' => 'nav nav-pills',
+                ],
+            ])
+            ->willReturn($mainMenu)
+            ;
 
-        $this->factory->createItem('<i class="fa fa-test"></i> my-label', [
-            'route'           => 'my-route',
-            'routeParameters' => [],
-            'linkAttributes'  => [],
-            'extras'          => [
-                'safe_label'         => true,
-                'translation_domain' => false,
-            ],
-        ])
-        ->willReturn($item)
-        ;
+        $this->factory->expects(static::at(1))->method('createItem')
+            ->with('<i class="fa fa-test"></i> my-label', [
+                'route'           => 'my-route',
+                'routeParameters' => [],
+                'linkAttributes'  => [],
+                'extras'          => [
+                    'safe_label'         => true,
+                    'translation_domain' => false,
+                ],
+            ])
+            ->willReturn($item)
+            ;
 
-        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
+        static::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
                 [
                     'label' => 'my-label',
@@ -268,64 +278,70 @@ final class ConfigBuilderTest extends TestCase
     public function testBuildMenuWithChildren(): void
     {
         $builder = new ConfigBuilder(
-            $this->factory->reveal(),
-            $this->translator->reveal()
+            $this->factory,
+            $this->translator
         );
 
-        $item = $this->prophesize(ItemInterface::class);
-
-        $mainMenu = $this->prophesize(ItemInterface::class);
-        $mainMenu->addChild($item)
-            ->shouldBeCalled()
+        $item = $this->createMock(ItemInterface::class);
+        $item->expects(static::once())->method('addChild')
+            ->with($item)
         ;
 
-        $this->factory->createItem('main', [
-            'attributes' => [
-                'class' => 'nav',
-            ],
-            'childrenAttributes' => [
-                'class' => 'nav nav-pills',
-            ],
-        ])
-        ->willReturn($mainMenu)
+        $mainMenu = $this->createMock(ItemInterface::class);
+        $mainMenu->expects(static::once())->method('addChild')
+            ->with($item)
         ;
 
-        $this->factory->createItem('my-label <b class="caret caret-menu"></b>', [
-            'route'           => 'my-route',
-            'routeParameters' => [],
-            'linkAttributes'  => [
-                'class'       => 'dropdown-toggle',
-                'data-toggle' => 'dropdown',
-                'data-target' => '#',
-            ],
-            'extras' => [
-                'safe_label'         => true,
-                'translation_domain' => false,
-            ],
-            'attributes' => [
-                'class' => 'dropdown',
-            ],
-            'childrenAttributes' => [
-                'class' => 'dropdown-menu',
-            ],
-            'label' => 'my-label <b class="caret caret-menu"></b>',
-        ])
-        ->willReturn($item)
-        ;
+        $this->factory->expects(static::at(0))->method('createItem')
+            ->with('main', [
+                'attributes' => [
+                    'class' => 'nav',
+                ],
+                'childrenAttributes' => [
+                    'class' => 'nav nav-pills',
+                ],
+            ])
+            ->willReturn($mainMenu)
+            ;
 
-        $this->factory->createItem('my-sub-label', [
-            'route'           => 'my-sub-route',
-            'routeParameters' => [],
-            'linkAttributes'  => [],
-            'extras'          => [
-                'safe_label'         => true,
-                'translation_domain' => false,
-            ],
-        ])
-        ->willReturn($item)
-        ;
+        $this->factory->expects(static::at(1))->method('createItem')
+            ->with('my-label <b class="caret caret-menu"></b>', [
+                'route'           => 'my-route',
+                'routeParameters' => [],
+                'linkAttributes'  => [
+                    'class'       => 'dropdown-toggle',
+                    'data-toggle' => 'dropdown',
+                    'data-target' => '#',
+                ],
+                'extras' => [
+                    'safe_label'         => true,
+                    'translation_domain' => false,
+                ],
+                'attributes' => [
+                    'class' => 'dropdown',
+                ],
+                'childrenAttributes' => [
+                    'class' => 'dropdown-menu',
+                ],
+                'label' => 'my-label <b class="caret caret-menu"></b>',
+            ])
+            ->willReturn($item)
+            ;
 
-        static::assertSame($mainMenu->reveal(), $builder->buildMenu([
+        $this->factory->expects(static::at(2))->method('createItem')
+            ->with('my-sub-label', [
+                'route'           => 'my-sub-route',
+                'routeParameters' => [],
+                'linkAttributes'  => [],
+                'extras'          => [
+                    'safe_label'         => true,
+                    'translation_domain' => false,
+                ],
+            ])
+            ->willReturn($item)
+            ;
+
+        static::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
                 [
                     'label'       => 'my-label',
