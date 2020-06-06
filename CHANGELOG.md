@@ -7,6 +7,8 @@
 
 ## 📦 Dependencies
 
-- Drop support for symfony 3 @core23 (#30)
+- Add support for KnpMenu 3 @core23 (#46)
 - Add support for symfony 5 @core23 (#23)
-- Bump sonata BlockBundle dependency @core23 (#20 #34)
+- Use latest block bundle for auto-registration of blocks @core23 (#20)
+- Bump sonata BlockBundle dependency @core23 (#34)
+- Drop support for symfony 3 @core23 (#30)
