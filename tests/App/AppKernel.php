@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\Tests\App;
+namespace Nucleos\MenuBundle\Tests\App;
 
-use Core23\MenuBundle\Core23MenuBundle;
-use Core23\MenuBundle\Tests\App\Controller\TwigTestController;
+use Nucleos\MenuBundle\NucleosMenuBundle;
+use Nucleos\MenuBundle\Tests\App\Controller\TwigTestController;
 use Sonata\BlockBundle\SonataBlockBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
@@ -36,7 +36,7 @@ final class AppKernel extends Kernel
         yield new FrameworkBundle();
         yield new TwigBundle();
         yield new SonataBlockBundle();
-        yield new Core23MenuBundle();
+        yield new NucleosMenuBundle();
     }
 
     public function getCacheDir(): string

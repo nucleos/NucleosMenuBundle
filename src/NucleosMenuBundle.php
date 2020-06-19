@@ -9,13 +9,13 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle;
+namespace Nucleos\MenuBundle;
 
-use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
+use Nucleos\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class Core23MenuBundle extends Bundle
+final class NucleosMenuBundle extends Bundle
 {
     public function build(ContainerBuilder $container): void
     {

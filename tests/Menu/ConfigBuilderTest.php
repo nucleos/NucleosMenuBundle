@@ -9,11 +9,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\Tests\Menu;
+namespace Nucleos\MenuBundle\Tests\Menu;
 
-use Core23\MenuBundle\Menu\ConfigBuilder;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
+use Nucleos\MenuBundle\Menu\ConfigBuilder;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\Translation\TranslatorInterface;

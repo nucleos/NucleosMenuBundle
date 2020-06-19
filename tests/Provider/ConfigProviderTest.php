@@ -9,12 +9,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\Tests\Provider;
+namespace Nucleos\MenuBundle\Tests\Provider;
 
-use Core23\MenuBundle\Menu\ConfigBuilderInterface;
-use Core23\MenuBundle\Provider\ConfigProvider;
 use InvalidArgumentException;
 use Knp\Menu\ItemInterface;
+use Nucleos\MenuBundle\Menu\ConfigBuilderInterface;
+use Nucleos\MenuBundle\Provider\ConfigProvider;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
 

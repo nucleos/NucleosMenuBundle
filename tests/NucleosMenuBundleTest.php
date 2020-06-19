@@ -9,21 +9,21 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\Tests;
+namespace Nucleos\MenuBundle\Tests;
 
-use Core23\MenuBundle\Core23MenuBundle;
-use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
-use Core23\MenuBundle\DependencyInjection\Core23MenuExtension;
+use Nucleos\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
+use Nucleos\MenuBundle\DependencyInjection\NucleosMenuExtension;
+use Nucleos\MenuBundle\NucleosMenuBundle;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-final class Core23MenuBundleTest extends TestCase
+final class NucleosMenuBundleTest extends TestCase
 {
     public function testGetContainerExtension(): void
     {
-        $bundle = new Core23MenuBundle();
+        $bundle = new NucleosMenuBundle();
 
-        static::assertInstanceOf(Core23MenuExtension::class, $bundle->getContainerExtension());
+        static::assertInstanceOf(NucleosMenuExtension::class, $bundle->getContainerExtension());
     }
 
     public function testBuild(): void
@@ -34,7 +34,7 @@ final class Core23MenuBundleTest extends TestCase
             ->with(static::isInstanceOf(MenuCompilerPass::class))
         ;
 
-        $bundle = new Core23MenuBundle();
+        $bundle = new NucleosMenuBundle();
         $bundle->build($containerBuilder);
     }
 }

@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\Tests\DependencyInjection\Compiler;
+namespace Nucleos\MenuBundle\Tests\DependencyInjection\Compiler;
 
-use Core23\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
+use Nucleos\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
@@ -46,7 +46,7 @@ final class MenuCompilerPassTest extends TestCase
         ;
 
         $this->container->setDefinition('sonata.block.menu.registry', $definition);
-        $this->container->setParameter('core23_menu.groups', [
+        $this->container->setParameter('nucleos_menu.groups', [
             'main' => [
                 'name'       => 'FooMenu',
                 'attributes' => [
@@ -62,7 +62,7 @@ final class MenuCompilerPassTest extends TestCase
 
     public function testProcessWithEmptyGroups(): void
     {
-        $this->container->setParameter('core23_menu.groups', [
+        $this->container->setParameter('nucleos_menu.groups', [
         ]);
 
         $compiler = new MenuCompilerPass();

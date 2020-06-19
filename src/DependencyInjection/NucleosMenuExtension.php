@@ -9,14 +9,14 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\DependencyInjection;
+namespace Nucleos\MenuBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-final class Core23MenuExtension extends Extension
+final class NucleosMenuExtension extends Extension
 {
     /**
      * @param array<mixed> $configs
@@ -29,7 +29,7 @@ final class Core23MenuExtension extends Extension
         $configuration = new Configuration();
         $config        = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('core23_menu.groups', array_combine(
+        $container->setParameter('nucleos_menu.groups', array_combine(
             array_map(static function (string $name): string {
                 return sprintf('static_%s', $name);
             }, array_keys($config['groups'])),

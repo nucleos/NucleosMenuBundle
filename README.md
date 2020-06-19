@@ -1,24 +1,24 @@
 MenuBundle
 ==========
-[![Latest Stable Version](https://poser.pugx.org/core23/menu-bundle/v/stable)](https://packagist.org/packages/core23/menu-bundle)
-[![Latest Unstable Version](https://poser.pugx.org/core23/menu-bundle/v/unstable)](https://packagist.org/packages/core23/menu-bundle)
-[![License](https://poser.pugx.org/core23/menu-bundle/license)](LICENSE.md)
+[![Latest Stable Version](https://poser.pugx.org/nucleos/menu-bundle/v/stable)](https://packagist.org/packages/nucleos/menu-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/nucleos/menu-bundle/v/unstable)](https://packagist.org/packages/nucleos/menu-bundle)
+[![License](https://poser.pugx.org/nucleos/menu-bundle/license)](LICENSE.md)
 
-[![Total Downloads](https://poser.pugx.org/core23/menu-bundle/downloads)](https://packagist.org/packages/core23/menu-bundle)
-[![Monthly Downloads](https://poser.pugx.org/core23/menu-bundle/d/monthly)](https://packagist.org/packages/core23/menu-bundle)
-[![Daily Downloads](https://poser.pugx.org/core23/menu-bundle/d/daily)](https://packagist.org/packages/core23/menu-bundle)
+[![Total Downloads](https://poser.pugx.org/nucleos/menu-bundle/downloads)](https://packagist.org/packages/nucleos/menu-bundle)
+[![Monthly Downloads](https://poser.pugx.org/nucleos/menu-bundle/d/monthly)](https://packagist.org/packages/nucleos/menu-bundle)
+[![Daily Downloads](https://poser.pugx.org/nucleos/menu-bundle/d/daily)](https://packagist.org/packages/nucleos/menu-bundle)
 
-[![Continuous Integration](https://github.com/core23/MenuBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/core23/MenuBundle/actions)
-[![Code Coverage](https://codecov.io/gh/core23/MenuBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/core23/MenuBundle)
+[![Continuous Integration](https://github.com/nucleos/MenuBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/MenuBundle/actions)
+[![Code Coverage](https://codecov.io/gh/nucleos/MenuBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/nucleos/MenuBundle)
 
-This bundle provides services for defining static menus for sonata.
+This bundle provides services for defining static menus for symfony applications.
 
 ## Installation
 
 Open a command console, enter your project directory and execute the following command to download the latest stable version of this bundle:
 
 ```
-composer require core23/menu-bundle
+composer require nucleos/menu-bundle
 ```
 
 ### Enable the Bundle
@@ -30,18 +30,18 @@ Then, enable the bundle by adding it to the list of registered bundles in `confi
 
 return [
     // ...
-    Core23\MenuBundle\Core23MenuBundle::class => ['all' => true],
+    Nucleos\MenuBundle\NucleosMenuBundle::class => ['all' => true],
 ];
 ```
 
 ## Usage
 
-Create a configuration file called `core23_menu.yaml`:
+Create a configuration file called `nucleos_menu.yaml`:
 
 ```yaml
-# config/packages/core23_menu.yaml
+# config/packages/nucleos_menu.yaml
 
-core23_menu:
+nucleos_menu:
     groups:
         // Header menu
         header:

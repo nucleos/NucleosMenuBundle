@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <services>
-    <service id="core23_menu.builder.config" class="Core23\MenuBundle\Menu\ConfigBuilder">
+    <service id="nucleos_menu.builder.config" class="Nucleos\MenuBundle\Menu\ConfigBuilder">
       <argument type="service" id="knp_menu.factory"/>
       <argument type="service" id="translator"/>
     </service>
-    <service id="core23_menu.config_provider" class="Core23\MenuBundle\Provider\ConfigProvider">
+    <service id="nucleos_menu.config_provider" class="Nucleos\MenuBundle\Provider\ConfigProvider">
       <tag name="knp_menu.provider"/>
-      <argument type="service" id="core23_menu.builder.config"/>
-      <argument>%core23_menu.groups%</argument>
+      <argument type="service" id="nucleos_menu.builder.config"/>
+      <argument>%nucleos_menu.groups%</argument>
     </service>
   </services>
 </container>

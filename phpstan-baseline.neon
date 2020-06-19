@@ -11,117 +11,117 @@ parameters:
 			path: src/DependencyInjection/Configuration.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\DependencyInjection\\\\Configuration\\:\\:evaluateChildren\\(\\) has parameter \\$child with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\DependencyInjection\\\\Configuration\\:\\:evaluateChildren\\(\\) has parameter \\$child with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/DependencyInjection/Configuration.php
 
 		-
-			message: "#^Property Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:\\$defaultOptions type has no value type specified in iterable type array\\.$#"
+			message: "#^Property Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:\\$defaultOptions type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) has parameter \\$menu with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) has parameter \\$menu with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) has parameter \\$baseMenuOptions with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) has parameter \\$baseMenuOptions with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) has parameter \\$configItems with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) has parameter \\$configItems with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) has parameter \\$menu with no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) has parameter \\$menu with no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildSubMenu\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createItem\\(\\) has parameter \\$baseMenuOptions with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createItem\\(\\) has parameter \\$baseMenuOptions with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createItem\\(\\) has parameter \\$itemDefinition with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createItem\\(\\) has parameter \\$itemDefinition with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createItem\\(\\) has parameter \\$menu with no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createItem\\(\\) has parameter \\$menu with no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createLabel\\(\\) has parameter \\$itemDefinition with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:createLabel\\(\\) has parameter \\$itemDefinition with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:getOptions\\(\\) has parameter \\$baseMenuOptions with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:getOptions\\(\\) has parameter \\$baseMenuOptions with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:getOptions\\(\\) has parameter \\$itemDefinition with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:getOptions\\(\\) has parameter \\$itemDefinition with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:getOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:getOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) has parameter \\$menu with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) has parameter \\$menu with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilderInterface.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilderInterface.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilderInterface.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:__construct\\(\\) has parameter \\$menuIds with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:__construct\\(\\) has parameter \\$menuIds with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Provider/ConfigProvider.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Provider/ConfigProvider.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) return type has no value type specified in iterable type Knp\\\\Menu\\\\ItemInterface\\.$#"
 			count: 1
 			path: src/Provider/ConfigProvider.php
 
 		-
-			message: "#^Method Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:has\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:has\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Provider/ConfigProvider.php
 
@@ -141,7 +141,7 @@ parameters:
 			path: tests/BundleIntegrationTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$builder of class Core23\\\\MenuBundle\\\\Provider\\\\ConfigProvider constructor expects Core23\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface, object given\\.$#"
+			message: "#^Parameter \\#1 \\$builder of class Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider constructor expects Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface, object given\\.$#"
 			count: 4
 			path: tests/Provider/ConfigProviderTest.php
 
