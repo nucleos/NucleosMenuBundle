@@ -9,7 +9,7 @@ MenuBundle
 [![Daily Downloads](https://poser.pugx.org/nucleos/menu-bundle/d/daily)](https://packagist.org/packages/nucleos/menu-bundle)
 
 [![Continuous Integration](https://github.com/nucleos/MenuBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/MenuBundle/actions)
-[![Code Coverage](https://codecov.io/gh/nucleos/MenuBundle/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/MenuBundle)
+[![Code Coverage](https://codecov.io/gh/nucleos/NucleosMenuBundle/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosMenuBundle)
 
 This bundle provides services for defining static menus for symfony applications.
 
