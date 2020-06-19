@@ -1,5 +1,5 @@
-MenuBundle
-==========
+NucleosMenuBundle
+=================
 [![Latest Stable Version](https://poser.pugx.org/nucleos/menu-bundle/v/stable)](https://packagist.org/packages/nucleos/menu-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/nucleos/menu-bundle/v/unstable)](https://packagist.org/packages/nucleos/menu-bundle)
 [![License](https://poser.pugx.org/nucleos/menu-bundle/license)](LICENSE.md)
