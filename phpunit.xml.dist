@@ -4,7 +4,7 @@
     <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=0"/>
   </php>
   <testsuites>
-    <testsuite name="MenuBundle Test Suite">
+    <testsuite name="NucleosMenuBundle Test Suite">
       <directory>./tests/</directory>
     </testsuite>
   </testsuites>

@@ -1,7 +1,7 @@
 {
-    "name": "core23/menu-bundle",
+    "name": "nucleos/menu-bundle",
     "type": "symfony-bundle",
-    "description": "This bundle provides services for defining static menus for sonata.",
+    "description": "This bundle provides services for defining static menus for symfony applications.",
     "keywords": [
         "symfony",
         "sonata",
@@ -11,7 +11,7 @@
         "knpmenu",
         "generator"
     ],
-    "homepage": "https://core23.de",
+    "homepage": "https://nucleos.rocks",
     "license": "MIT",
     "authors": [
         {
@@ -46,12 +46,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Core23\\MenuBundle\\": "src/"
+            "Nucleos\\MenuBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Core23\\MenuBundle\\Tests\\": "tests/"
+            "Nucleos\\MenuBundle\\Tests\\": "tests/"
         }
     },
     "scripts": {

@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\DependencyInjection\Compiler;
+namespace Nucleos\MenuBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -18,7 +18,7 @@ final class MenuCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        $groups = $container->getParameter('core23_menu.groups');
+        $groups = $container->getParameter('nucleos_menu.groups');
 
         if (!\is_array($groups) || 0 === \count($groups)) {
             return;

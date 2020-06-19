@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\Tests;
+namespace Nucleos\MenuBundle\Tests;
 
-use Core23\MenuBundle\Tests\App\AppKernel;
+use Nucleos\MenuBundle\Tests\App\AppKernel;
 use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpKernel\Client;

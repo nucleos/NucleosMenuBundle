@@ -9,12 +9,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\Provider;
+namespace Nucleos\MenuBundle\Provider;
 
-use Core23\MenuBundle\Menu\ConfigBuilderInterface;
 use InvalidArgumentException;
 use Knp\Menu\ItemInterface;
 use Knp\Menu\Provider\MenuProviderInterface;
+use Nucleos\MenuBundle\Menu\ConfigBuilderInterface;
 
 final class ConfigProvider implements MenuProviderInterface
 {

@@ -9,12 +9,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\MenuBundle\Tests\DependencyInjection;
+namespace Nucleos\MenuBundle\Tests\DependencyInjection;
 
-use Core23\MenuBundle\DependencyInjection\Core23MenuExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
+use Nucleos\MenuBundle\DependencyInjection\NucleosMenuExtension;
 
-final class Core23MenuExtensionTest extends AbstractExtensionTestCase
+final class NucleosMenuExtensionTest extends AbstractExtensionTestCase
 {
     public function testLoadDefault(): void
     {
@@ -40,10 +40,10 @@ final class Core23MenuExtensionTest extends AbstractExtensionTestCase
             ],
         ]);
 
-        $this->assertContainerBuilderHasService('core23_menu.builder.config');
-        $this->assertContainerBuilderHasService('core23_menu.config_provider');
+        $this->assertContainerBuilderHasService('nucleos_menu.builder.config');
+        $this->assertContainerBuilderHasService('nucleos_menu.config_provider');
 
-        $this->assertContainerBuilderHasParameter('core23_menu.groups', [
+        $this->assertContainerBuilderHasParameter('nucleos_menu.groups', [
             'static_test' => [
                 'name'       => 'FooMenu',
                 'attributes' => [
@@ -76,7 +76,7 @@ final class Core23MenuExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions(): array
     {
         return [
-            new Core23MenuExtension(),
+            new NucleosMenuExtension(),
         ];
     }
 }
