@@ -3,9 +3,9 @@
 _extends: .github
 
 repository:
-  name: MenuBundle
-  description: This bundle provides services for defining static menus for sonata.
-  homepage: https://core23.de
+  name: NucleosMenuBundle
+  description: This bundle provides services for defining static menus for symfony applications.
+  homepage: https://nucleos.rocks
   topics: symfony, symfony-bundle, bundle, php, menu, knpmenu, generator, sonata, sonata-block
 
 branches:
