@@ -1,3 +1,9 @@
+# 2.1.0
+
+## 📦 Dependencies
+
+- Add support for sonata/block-bundle 3 
+
 # 2.0.0
 
 ## Changed
