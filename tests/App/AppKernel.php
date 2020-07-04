@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Nucleos\MenuBundle\Tests\App;
 
+use Knp\Bundle\MenuBundle\KnpMenuBundle;
 use Nucleos\MenuBundle\NucleosMenuBundle;
 use Nucleos\MenuBundle\Tests\App\Controller\TwigTestController;
 use Sonata\BlockBundle\SonataBlockBundle;
@@ -36,6 +37,7 @@ final class AppKernel extends Kernel
         yield new FrameworkBundle();
         yield new TwigBundle();
         yield new SonataBlockBundle();
+        yield new KnpMenuBundle();
         yield new NucleosMenuBundle();
     }
 
