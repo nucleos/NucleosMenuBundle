@@ -16,10 +16,13 @@ use Knp\Menu\ItemInterface;
 use Nucleos\MenuBundle\Menu\ConfigBuilder;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class ConfigBuilderTest extends TestCase
 {
+    use ProphecyTrait;
+
     /**
      * @var MockObject&FactoryInterface
      */
@@ -129,32 +132,33 @@ final class ConfigBuilderTest extends TestCase
             ->with($item)
         ;
 
-        $this->factory->expects(static::at(0))->method('createItem')
-            ->with('main', [
-                'attributes' => [
-                    'class' => 'nav',
-                ],
-                'childrenAttributes' => [
-                    'class' => 'nav nav-pills',
-                ],
-            ])
-            ->willReturn($mainMenu)
-            ;
-
-        $this->factory->expects(static::at(1))->method('createItem')
-            ->with('my-label', [
-                'route'           => 'my-route',
-                'routeParameters' => [
-                    'paramKey' => 'value',
-                ],
-                'linkAttributes'  => ['class' => 'my-class'],
-                'extras'          => [
-                    'safe_label'         => true,
-                    'translation_domain' => false,
-                ],
-            ])
-            ->willReturn($item)
-            ;
+        $this->factory->expects(static::exactly(2))->method('createItem')
+            ->withConsecutive(
+                ['main', [
+                    'attributes' => [
+                        'class' => 'nav',
+                    ],
+                    'childrenAttributes' => [
+                        'class' => 'nav nav-pills',
+                    ],
+                ]],
+                ['my-label', [
+                    'route'           => 'my-route',
+                    'routeParameters' => [
+                        'paramKey' => 'value',
+                    ],
+                    'linkAttributes'  => ['class' => 'my-class'],
+                    'extras'          => [
+                        'safe_label'         => true,
+                        'translation_domain' => false,
+                    ],
+                ]]
+            )
+            ->willReturn(
+                $mainMenu,
+                $item
+            )
+        ;
 
         static::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
@@ -184,30 +188,31 @@ final class ConfigBuilderTest extends TestCase
             ->with($item)
         ;
 
-        $this->factory->expects(static::at(0))->method('createItem')
-            ->with('main', [
-                'attributes' => [
-                    'class' => 'nav',
-                ],
-                'childrenAttributes' => [
-                    'class' => 'nav nav-pills',
-                ],
-            ])
-            ->willReturn($mainMenu)
-            ;
-
-        $this->factory->expects(static::at(1))->method('createItem')
-            ->with('My label', [
-                'route'           => 'my-route',
-                'routeParameters' => [],
-                'linkAttributes'  => [],
-                'extras'          => [
-                    'safe_label'         => true,
-                    'translation_domain' => false,
-                ],
-            ])
-            ->willReturn($item)
-            ;
+        $this->factory->expects(static::exactly(2))->method('createItem')
+            ->withConsecutive(
+                ['main', [
+                    'attributes' => [
+                        'class' => 'nav',
+                    ],
+                    'childrenAttributes' => [
+                        'class' => 'nav nav-pills',
+                    ],
+                ]],
+                ['My label', [
+                    'route'           => 'my-route',
+                    'routeParameters' => [],
+                    'linkAttributes'  => [],
+                    'extras'          => [
+                        'safe_label'         => true,
+                        'translation_domain' => false,
+                    ],
+                ]]
+            )
+            ->willReturn(
+                $mainMenu,
+                $item
+            )
+        ;
 
         $this->translator->method('trans')
             ->with('my-label', [], 'App')
@@ -239,30 +244,31 @@ final class ConfigBuilderTest extends TestCase
             ->with($item)
         ;
 
-        $this->factory->expects(static::at(0))->method('createItem')
-            ->with('main', [
-                'attributes' => [
-                    'class' => 'nav',
-                ],
-                'childrenAttributes' => [
-                    'class' => 'nav nav-pills',
-                ],
-            ])
-            ->willReturn($mainMenu)
-            ;
-
-        $this->factory->expects(static::at(1))->method('createItem')
-            ->with('<i class="fa fa-test"></i> my-label', [
-                'route'           => 'my-route',
-                'routeParameters' => [],
-                'linkAttributes'  => [],
-                'extras'          => [
-                    'safe_label'         => true,
-                    'translation_domain' => false,
-                ],
-            ])
-            ->willReturn($item)
-            ;
+        $this->factory->expects(static::exactly(2))->method('createItem')
+            ->withConsecutive(
+                ['main', [
+                    'attributes' => [
+                        'class' => 'nav',
+                    ],
+                    'childrenAttributes' => [
+                        'class' => 'nav nav-pills',
+                    ],
+                ]],
+                ['<i class="fa fa-test"></i> my-label', [
+                    'route'           => 'my-route',
+                    'routeParameters' => [],
+                    'linkAttributes'  => [],
+                    'extras'          => [
+                        'safe_label'         => true,
+                        'translation_domain' => false,
+                    ],
+                ]]
+            )
+            ->willReturn(
+                $mainMenu,
+                $item
+            )
+        ;
 
         static::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
@@ -292,54 +298,52 @@ final class ConfigBuilderTest extends TestCase
             ->with($item)
         ;
 
-        $this->factory->expects(static::at(0))->method('createItem')
-            ->with('main', [
-                'attributes' => [
-                    'class' => 'nav',
-                ],
-                'childrenAttributes' => [
-                    'class' => 'nav nav-pills',
-                ],
-            ])
-            ->willReturn($mainMenu)
-            ;
-
-        $this->factory->expects(static::at(1))->method('createItem')
-            ->with('my-label <b class="caret caret-menu"></b>', [
-                'route'           => 'my-route',
-                'routeParameters' => [],
-                'linkAttributes'  => [
-                    'class'       => 'dropdown-toggle',
-                    'data-toggle' => 'dropdown',
-                    'data-target' => '#',
-                ],
-                'extras' => [
-                    'safe_label'         => true,
-                    'translation_domain' => false,
-                ],
-                'attributes' => [
-                    'class' => 'dropdown',
-                ],
-                'childrenAttributes' => [
-                    'class' => 'dropdown-menu',
-                ],
-                'label' => 'my-label <b class="caret caret-menu"></b>',
-            ])
-            ->willReturn($item)
-            ;
-
-        $this->factory->expects(static::at(2))->method('createItem')
-            ->with('my-sub-label', [
-                'route'           => 'my-sub-route',
-                'routeParameters' => [],
-                'linkAttributes'  => [],
-                'extras'          => [
-                    'safe_label'         => true,
-                    'translation_domain' => false,
-                ],
-            ])
-            ->willReturn($item)
-            ;
+        $this->factory->expects(static::exactly(3))->method('createItem')
+            ->withConsecutive(
+                ['main', [
+                    'attributes' => [
+                        'class' => 'nav',
+                    ],
+                    'childrenAttributes' => [
+                        'class' => 'nav nav-pills',
+                    ],
+                ]],
+                ['my-label <b class="caret caret-menu"></b>', [
+                    'route'           => 'my-route',
+                    'routeParameters' => [],
+                    'linkAttributes'  => [
+                        'class'       => 'dropdown-toggle',
+                        'data-toggle' => 'dropdown',
+                        'data-target' => '#',
+                    ],
+                    'extras' => [
+                        'safe_label'         => true,
+                        'translation_domain' => false,
+                    ],
+                    'attributes' => [
+                        'class' => 'dropdown',
+                    ],
+                    'childrenAttributes' => [
+                        'class' => 'dropdown-menu',
+                    ],
+                    'label' => 'my-label <b class="caret caret-menu"></b>',
+                ]],
+                ['my-sub-label', [
+                    'route'           => 'my-sub-route',
+                    'routeParameters' => [],
+                    'linkAttributes'  => [],
+                    'extras'          => [
+                        'safe_label'         => true,
+                        'translation_domain' => false,
+                    ],
+                ]],
+            )
+            ->willReturn(
+                $mainMenu,
+                $item,
+                $item,
+            )
+        ;
 
         static::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
