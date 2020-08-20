@@ -140,8 +140,3 @@ parameters:
 			count: 1
 			path: tests/BundleIntegrationTest.php
 
-		-
-			message: "#^Parameter \\#1 \\$builder of class Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider constructor expects Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface, object given\\.$#"
-			count: 4
-			path: tests/Provider/ConfigProviderTest.php
-

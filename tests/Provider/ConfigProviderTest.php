@@ -24,7 +24,7 @@ final class ConfigProviderTest extends TestCase
     use ProphecyTrait;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<ConfigBuilderInterface>
      */
     private $configBuilder;
 
