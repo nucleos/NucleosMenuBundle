@@ -16,10 +16,13 @@ use Knp\Menu\ItemInterface;
 use Nucleos\MenuBundle\Menu\ConfigBuilderInterface;
 use Nucleos\MenuBundle\Provider\ConfigProvider;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 final class ConfigProviderTest extends TestCase
 {
+    use ProphecyTrait;
+
     /**
      * @var ObjectProphecy
      */

@@ -14,12 +14,15 @@ namespace Nucleos\MenuBundle\Tests\DependencyInjection\Compiler;
 use Nucleos\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
 final class MenuCompilerPassTest extends TestCase
 {
+    use ProphecyTrait;
+
     /**
      * @var ContainerBuilder
      */
