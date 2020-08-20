@@ -29,7 +29,7 @@ final class MenuCompilerPassTest extends TestCase
     private $container;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<Definition>
      */
     private $registryDefinitionMock;
 
