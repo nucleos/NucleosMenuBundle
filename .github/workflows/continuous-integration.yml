@@ -239,13 +239,8 @@ jobs:
 
     if: >
       github.event_name == 'pull_request' &&
-      github.event.pull_request.draft == false && (
-        github.event.action == 'opened' ||
-        github.event.action == 'reopened' ||
-        github.event.action == 'synchronize'
-      ) && (
-        (contains(github.event.pull_request.labels.*.name, 'automerge'))
-      )
+      github.event.pull_request.draft == false &&
+      contains(github.event.pull_request.labels.*.name, 'automerge')
 
     steps:
       - name: "Request review from @nucleos-bot"
@@ -258,7 +253,7 @@ jobs:
             const reviewers = [
               "nucleos-bot",
             ]
-            await github.pulls.createReviewRequest({
+            await github.pulls.requestReviewers({
               owner: repository.owner,
               pull_number: pullRequest.number,
               repo: repository.repo,
