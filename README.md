@@ -10,6 +10,7 @@ NucleosMenuBundle
 
 [![Continuous Integration](https://github.com/nucleos/MenuBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/MenuBundle/actions)
 [![Code Coverage](https://codecov.io/gh/nucleos/NucleosMenuBundle/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosMenuBundle)
+[![Type Coverage](https://shepherd.dev/github/nucleos/NucleosMenuBundle/coverage.svg)](https://shepherd.dev/github/nucleos/NucleosMenuBundle)
 
 This bundle provides services for defining static menus for symfony applications.
 
