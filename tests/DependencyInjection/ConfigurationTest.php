@@ -31,6 +31,9 @@ final class ConfigurationTest extends TestCase
         static::assertSame($expected, $config);
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     */
     public function testGroupsOptions(): void
     {
         $processor = new Processor();
