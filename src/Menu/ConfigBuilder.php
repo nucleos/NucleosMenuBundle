@@ -102,7 +102,9 @@ final class ConfigBuilder implements ConfigBuilderInterface
 
         $menuOptions = self::getOptions($baseMenuOptions, $itemDefinition);
 
-        if (\array_key_exists('children', $itemDefinition) && \count($itemDefinition['children']) > 0) {
+        $hasChildren = \array_key_exists('children', $itemDefinition) && \count($itemDefinition['children']) > 0;
+
+        if ($hasChildren) {
             $label       .= ' <b class="caret caret-menu"></b>';
             $menuOptions = array_merge($menuOptions, $this->defaultOptions, [
                 'label' => $label,
@@ -112,7 +114,7 @@ final class ConfigBuilder implements ConfigBuilderInterface
         $subMenu = $this->factory->createItem($label, $menuOptions);
         $menu->addChild($subMenu);
 
-        if (\array_key_exists('children', $itemDefinition) && \count($itemDefinition['children']) > 0) {
+        if ($hasChildren) {
             $this->buildSubMenu($subMenu, $itemDefinition['children']);
         }
     }
