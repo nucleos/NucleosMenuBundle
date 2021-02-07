@@ -1,12 +1,39 @@
-# 2.1.0
+# Changelog
 
-## 📦 Dependencies
+All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-- Add support for sonata/block-bundle 3 
+## 2.2.0 - TBD
 
-# 2.0.0
+### Added
 
-## Changed
+- Nothing.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+
+## 2.1.0
+
+### 📦 Dependencies
+
+- Add support for sonata/block-bundle 3
+
+## 2.0.0
+
+### Changed
 
 * Renamed namespace `Core23\MenuBundle` to `Nucleos\MenuBundle` after move to [@nucleos]
 
@@ -41,14 +68,14 @@
   to delete backup files created in the previous step.
 
 
-# 1.1.0
+## 1.1.0
 
-## Changes
+### Changes
 
 - Add missing strict file header [@core23] ([#33])
 - Removed explicit private visibility of services [@core23] ([#13])
 
-## 📦 Dependencies
+### 📦 Dependencies
 
 - Add support for KnpMenu 3 [@core23] ([#46])
 - Add support for symfony 5 [@core23] ([#23])
