@@ -1,6 +1,7 @@
 # https://help.github.com/en/categories/automating-your-workflow-with-github-actions
 
 on:
+  create:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
   push:
