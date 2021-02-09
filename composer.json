@@ -40,11 +40,6 @@
     "config": {
         "sort-packages": true
     },
-    "extra": {
-        "branch-alias": {
-            "dev-main": "2.x-dev"
-        }
-    },
     "autoload": {
         "psr-4": {
             "Nucleos\\MenuBundle\\": "src/"
