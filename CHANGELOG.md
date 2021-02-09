@@ -2,28 +2,33 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.2.0 - TBD
+## 2.2.0 - 2021-02-09
 
-### Added
 
-- Nothing.
 
-### Changed
+-----
 
-- Nothing.
+### Release Notes for [2.2.0](https://github.com/nucleos/NucleosMenuBundle/milestone/1)
 
-### Deprecated
 
-- Nothing.
 
-### Removed
+### 2.2.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **3**
+- Total contributors: **1**
 
-### Fixed
+#### dependency
 
-- Nothing.
+ - [139: Add support for PHP 8](https://github.com/nucleos/NucleosMenuBundle/pull/139) thanks to @core23
 
+#### Bug
+
+ - [59: Move configuration to PHP](https://github.com/nucleos/NucleosMenuBundle/pull/59) thanks to @core23
+
+#### Feature Request
+
+ - [58: Move configuration to PHP](https://github.com/nucleos/NucleosMenuBundle/pull/58) thanks to @core23
 
 ## 2.1.0
 
