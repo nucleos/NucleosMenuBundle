@@ -25,8 +25,6 @@ final class Configuration implements ConfigurationInterface
 
         $rootNode = $treeBuilder->getRootNode();
 
-        \assert($rootNode instanceof ArrayNodeDefinition);
-
         $this->addMenuSection($rootNode);
 
         return $treeBuilder;
@@ -108,8 +106,6 @@ final class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder($name);
 
         $definition = $treeBuilder->getRootNode();
-
-        \assert($definition instanceof ArrayNodeDefinition);
 
         $this->buildPathNode($definition);
 
