@@ -3,7 +3,7 @@
 on:
   create:
   pull_request:
-    types: [opened, synchronize, reopened, labeled, unlabeled]
+    types: [opened, synchronize, reopened]
   push:
     branches:
       - "*.x"
