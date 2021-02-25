@@ -24,6 +24,26 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - Nothing.
 
+## 2.2.1 - 2021-02-25
+
+
+-----
+
+### Release Notes for [2.2.1](https://github.com/nucleos/NucleosMenuBundle/milestone/2)
+
+2.2.x bugfix release (patch)
+
+### 2.2.1
+
+- Total issues resolved: **0**
+- Total pull requests resolved: **2**
+- Total contributors: **1**
+
+#### Bug
+
+ - [230: Fix service parameter](https://github.com/nucleos/NucleosMenuBundle/pull/230) thanks to @core23
+ - [229: Add missing provider tag to ConfigProvider](https://github.com/nucleos/NucleosMenuBundle/pull/229) thanks to @core23
+
 ## 2.2.0 - 2021-02-09
 
 
