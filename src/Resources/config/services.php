@@ -20,7 +20,7 @@ return static function (ContainerConfigurator $container): void {
         ->set('nucleos_menu.builder.config', ConfigBuilder::class)
             ->args([
                 new Reference('knp_menu.factory'),
-                new Parameter('translator'),
+                new Reference('translator'),
             ])
 
         ->set('nucleos_menu.config_provider', ConfigProvider::class)
