@@ -24,6 +24,7 @@ return static function (ContainerConfigurator $container): void {
             ])
 
         ->set('nucleos_menu.config_provider', ConfigProvider::class)
+            ->tag('knp_menu.provider')
             ->args([
                 new Reference('nucleos_menu.builder.config'),
                 new Parameter('nucleos_menu.groups'),
