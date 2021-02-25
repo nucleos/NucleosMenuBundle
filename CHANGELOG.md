@@ -2,27 +2,25 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.2.1 - TBD
+## 2.2.1 - 2021-02-25
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [2.2.1](https://github.com/nucleos/NucleosMenuBundle/milestone/2)
 
-- Nothing.
+2.2.x bugfix release (patch)
 
-### Deprecated
+### 2.2.1
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **2**
+- Total contributors: **1**
 
-### Removed
+#### Bug
 
-- Nothing.
-
-### Fixed
-
-- Nothing.
+ - [230: Fix service parameter](https://github.com/nucleos/NucleosMenuBundle/pull/230) thanks to @core23
+ - [229: Add missing provider tag to ConfigProvider](https://github.com/nucleos/NucleosMenuBundle/pull/229) thanks to @core23
 
 ## 2.2.0 - 2021-02-09
 
