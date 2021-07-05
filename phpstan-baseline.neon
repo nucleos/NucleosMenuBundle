@@ -11,11 +11,6 @@ parameters:
 			path: src/DependencyInjection/Configuration.php
 
 		-
-			message: "#^Property Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:\\$defaultOptions type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Menu/ConfigBuilder.php
-
-		-
 			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) has parameter \\$menu with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
@@ -66,6 +61,11 @@ parameters:
 			path: src/Menu/ConfigBuilder.php
 
 		-
+			message: "#^Property Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:\\$defaultOptions type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Menu/ConfigBuilder.php
+
+		-
 			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilderInterface\\:\\:buildMenu\\(\\) has parameter \\$menu with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilderInterface.php
@@ -81,17 +81,17 @@ parameters:
 			path: src/Provider/ConfigProvider.php
 
 		-
-			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) has parameter \\$name with no typehint specified\\.$#"
 			count: 1
 			path: src/Provider/ConfigProvider.php
 
 		-
-			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:has\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:has\\(\\) has parameter \\$name with no typehint specified\\.$#"
 			count: 1
 			path: src/Provider/ConfigProvider.php
 
 		-
-			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
+			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
 			count: 1
 			path: tests/BundleIntegrationTest.php
 
@@ -101,7 +101,7 @@ parameters:
 			path: tests/BundleIntegrationTest.php
 
 		-
-			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
 			count: 1
 			path: tests/BundleIntegrationTest.php
 
