@@ -4,11 +4,9 @@
     "type": "project",
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.3",
-        "jangregor/phpstan-prophecy": "^1.0",
         "maglnet/composer-require-checker": "^3.5",
         "matthiasnoback/symfony-dependency-injection-test": "^4.3",
         "phpmd/phpmd": "^2.10",
-        "phpspec/prophecy-phpunit": "^2.0",
         "phpstan/extension-installer": "^1.0",
         "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-doctrine": "^1.0",

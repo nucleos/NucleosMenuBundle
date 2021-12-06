@@ -16,22 +16,19 @@ use Knp\Menu\ItemInterface;
 use Nucleos\MenuBundle\Menu\ConfigBuilder;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class ConfigBuilderTest extends TestCase
 {
-    use ProphecyTrait;
-
     /**
      * @var MockObject&FactoryInterface
      */
-    private $factory;
+    private FactoryInterface $factory;
 
     /**
      * @var MockObject&TranslatorInterface
      */
-    private $translator;
+    private TranslatorInterface $translator;
 
     protected function setUp(): void
     {

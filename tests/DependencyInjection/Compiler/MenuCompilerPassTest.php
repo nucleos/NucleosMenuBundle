@@ -12,33 +12,26 @@ declare(strict_types=1);
 namespace Nucleos\MenuBundle\Tests\DependencyInjection\Compiler;
 
 use Nucleos\MenuBundle\DependencyInjection\Compiler\MenuCompilerPass;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\Argument;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
 final class MenuCompilerPassTest extends TestCase
 {
-    use ProphecyTrait;
+    private ContainerBuilder $container;
 
     /**
-     * @var ContainerBuilder
+     * @var Definition&MockObject
      */
-    private $container;
-
-    /**
-     * @var ObjectProphecy<Definition>
-     */
-    private $registryDefinitionMock;
+    private Definition $registryDefinitionMock;
 
     protected function setUp(): void
     {
-        $this->registryDefinitionMock = $this->prophesize(Definition::class);
+        $this->registryDefinitionMock = $this->createMock(Definition::class);
 
         $this->container = new ContainerBuilder();
-        $this->container->setDefinition('sonata.block.menu.registry', $this->registryDefinitionMock->reveal());
+        $this->container->setDefinition('sonata.block.menu.registry', $this->registryDefinitionMock);
     }
 
     public function testProcess(): void
@@ -71,6 +64,6 @@ final class MenuCompilerPassTest extends TestCase
         $compiler = new MenuCompilerPass();
         $compiler->process($this->container);
 
-        $this->registryDefinitionMock->addMethodCall(Argument::any())->shouldNotHaveBeenCalled();
+        $this->registryDefinitionMock->expects(static::never())->method('addMethodCall');
     }
 }

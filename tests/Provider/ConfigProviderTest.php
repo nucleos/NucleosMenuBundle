@@ -15,42 +15,41 @@ use InvalidArgumentException;
 use Knp\Menu\ItemInterface;
 use Nucleos\MenuBundle\Menu\ConfigBuilderInterface;
 use Nucleos\MenuBundle\Provider\ConfigProvider;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 final class ConfigProviderTest extends TestCase
 {
-    use ProphecyTrait;
-
     /**
-     * @var ObjectProphecy<ConfigBuilderInterface>
+     * @var ConfigBuilderInterface&MockObject
      */
-    private $configBuilder;
+    private ConfigBuilderInterface $configBuilder;
 
     protected function setUp(): void
     {
-        $this->configBuilder = $this->prophesize(ConfigBuilderInterface::class);
+        $this->configBuilder = $this->createMock(ConfigBuilderInterface::class);
     }
 
     public function testGet(): void
     {
-        $menu = $this->prophesize(ItemInterface::class);
+        $menu = $this->createMock(ItemInterface::class);
 
-        $this->configBuilder->buildMenu(['name' => 'foo'], ['a' => 'b'])->willReturn($menu);
+        $this->configBuilder->method('buildMenu')->with(['name' => 'foo'], ['a' => 'b'])
+            ->willReturn($menu)
+        ;
 
-        $configProvider = new ConfigProvider($this->configBuilder->reveal(), [
+        $configProvider = new ConfigProvider($this->configBuilder, [
             'foo' => ['name' => 'foo'],
             'bar' => ['name' => 'bar'],
         ]);
-        static::assertSame($menu->reveal(), $configProvider->get('foo', ['a' => 'b']));
+        static::assertSame($menu, $configProvider->get('foo', ['a' => 'b']));
     }
 
     public function testGetDoesNotExist(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $configProvider = new ConfigProvider($this->configBuilder->reveal(), [
+        $configProvider = new ConfigProvider($this->configBuilder, [
             'foo' => ['name' => 'foo'],
             'bar' => ['name' => 'bar'],
         ]);
@@ -59,7 +58,7 @@ final class ConfigProviderTest extends TestCase
 
     public function testHas(): void
     {
-        $configProvider = new ConfigProvider($this->configBuilder->reveal(), [
+        $configProvider = new ConfigProvider($this->configBuilder, [
             'foo' => ['name' => 'foo'],
             'bar' => ['name' => 'bar'],
         ]);
@@ -69,7 +68,7 @@ final class ConfigProviderTest extends TestCase
 
     public function testHasNot(): void
     {
-        $configProvider = new ConfigProvider($this->configBuilder->reveal(), [
+        $configProvider = new ConfigProvider($this->configBuilder, [
             'foo' => ['name' => 'foo'],
             'bar' => ['name' => 'bar'],
         ]);
