@@ -11,6 +11,11 @@ parameters:
 			path: src/DependencyInjection/Configuration.php
 
 		-
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(int\\|string\\)\\: mixed\\)\\|null, Closure\\(string\\)\\: non\\-empty\\-string given\\.$#"
+			count: 1
+			path: src/DependencyInjection/NucleosMenuExtension.php
+
+		-
 			message: "#^Method Nucleos\\\\MenuBundle\\\\Menu\\\\ConfigBuilder\\:\\:buildMenu\\(\\) has parameter \\$menu with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Menu/ConfigBuilder.php
@@ -81,14 +86,29 @@ parameters:
 			path: src/Provider/ConfigProvider.php
 
 		-
-			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:get\\(\\) has parameter \\$name with no type specified\\.$#"
 			count: 1
 			path: src/Provider/ConfigProvider.php
 
 		-
-			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:has\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Provider\\\\ConfigProvider\\:\\:has\\(\\) has parameter \\$name with no type specified\\.$#"
 			count: 1
 			path: src/Provider/ConfigProvider.php
+
+		-
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Tests\\\\App\\\\AppKernel\\:\\:configureContainer\\(\\) has parameter \\$container with no type specified\\.$#"
+			count: 1
+			path: tests/App/AppKernel.php
+
+		-
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Tests\\\\App\\\\AppKernel\\:\\:configureContainer\\(\\) has parameter \\$loader with no type specified\\.$#"
+			count: 1
+			path: tests/App/AppKernel.php
+
+		-
+			message: "#^Method Nucleos\\\\MenuBundle\\\\Tests\\\\App\\\\AppKernel\\:\\:configureRoutes\\(\\) has parameter \\$routes with no type specified\\.$#"
+			count: 1
+			path: tests/App/AppKernel.php
 
 		-
 			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
