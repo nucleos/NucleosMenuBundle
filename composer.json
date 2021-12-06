@@ -1,7 +1,8 @@
 {
     "name": "nucleos/menu-bundle",
-    "type": "symfony-bundle",
     "description": "This bundle provides services for defining static menus for symfony applications.",
+    "license": "MIT",
+    "type": "symfony-bundle",
     "keywords": [
         "symfony",
         "sonata",
@@ -11,12 +12,29 @@
         "knpmenu",
         "generator"
     ],
-    "homepage": "https://nucleos.rocks",
-    "license": "MIT",
     "authors": [
         {
             "name": "Christian Gripp",
             "email": "mail@core23.de"
+        }
+    ],
+    "homepage": "https://nucleos.rocks",
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/core23"
+        },
+        {
+            "type": "opencollective",
+            "url": "https://opencollective.com/core23"
+        },
+        {
+            "type": "ko-fi",
+            "url": "https://ko-fi.com/core23"
+        },
+        {
+            "type": "other",
+            "url": "https://donate.core23.de"
         }
     ],
     "require": {
@@ -37,9 +55,6 @@
         "symfony/browser-kit": "^4.4 || ^5.0",
         "symfony/translation": "^4.2 || ^5.0"
     },
-    "config": {
-        "sort-packages": true
-    },
     "autoload": {
         "psr-4": {
             "Nucleos\\MenuBundle\\": "src/"
@@ -50,42 +65,15 @@
             "Nucleos\\MenuBundle\\Tests\\": "tests/"
         }
     },
+    "config": {
+        "sort-packages": true
+    },
     "scripts": {
         "post-install-cmd": [
             "@composer bin all install --ansi"
         ],
         "post-update-cmd": [
             "@composer bin all install --ansi"
-        ],
-        "coverage": "vendor/bin/phpunit --colors=always --coverage-clover=build/logs/clover.xml",
-        "cs": "PHP_CS_FIXER_IGNORE_ENV=1 && vendor/bin/php-cs-fixer fix --verbose",
-        "cs-diff": "PHP_CS_FIXER_IGNORE_ENV=1 && vendor/bin/php-cs-fixer fix  --verbose --diff --dry-run",
-        "deps": "vendor/bin/composer-require-checker check --config-file composer-require.json composer.json",
-        "infection": "vendor/bin/infection",
-        "lint": [
-            "find ./src \\( -name '*.xml' -or -name '*.xml.dist' -or -name '*.xlf' \\) -type f -exec xmllint --encode UTF-8 --output '{}' --format '{}' \\;",
-            "find ./src \\( -name '*.yml' -or -name '*.yaml' \\) -not -path '*/vendor/*' | xargs yaml-lint"
-        ],
-        "phpmd": "vendor/bin/phpmd src,tests ansi phpmd.xml",
-        "phpstan": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/phpunit --colors=always"
-    },
-    "funding": [
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/core23"
-        },
-        {
-            "type": "opencollective",
-            "url": "https://opencollective.com/core23"
-        },
-        {
-            "type": "ko-fi",
-            "url": "https://ko-fi.com/core23"
-        },
-        {
-            "type": "other",
-            "url": "https://donate.core23.de"
-        }
-    ]
+        ]
+    }
 }
