@@ -2,27 +2,32 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.3.0 - TBD
+## 2.3.0 - 2021-12-06
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [2.3.0](https://github.com/nucleos/NucleosMenuBundle/milestone/3)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 2.3.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **6**
+- Total contributors: **1**
 
-### Removed
+#### dependency
 
-- Nothing.
+ - [379: Add support for symfony/translation-contracts 3](https://github.com/nucleos/NucleosMenuBundle/pull/379) thanks to @core23
+ - [378: Add symfony 6 support](https://github.com/nucleos/NucleosMenuBundle/pull/378) thanks to @core23
+ - [377: Drop symfony 4 support](https://github.com/nucleos/NucleosMenuBundle/pull/377) thanks to @core23
+ - [369: Drop PHP 7 support](https://github.com/nucleos/NucleosMenuBundle/pull/369) thanks to @core23
 
-### Fixed
+#### Enhancement
 
-- Nothing.
+ - [376: Update tools and use make to run them](https://github.com/nucleos/NucleosMenuBundle/pull/376) thanks to @core23
+ - [241: Fix test config](https://github.com/nucleos/NucleosMenuBundle/pull/241) thanks to @core23
 
 ## 2.2.1 - 2021-02-25
 
