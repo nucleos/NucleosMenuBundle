@@ -17,20 +17,11 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class ConfigBuilder implements ConfigBuilderInterface
 {
-    /**
-     * @var FactoryInterface
-     */
-    private $factory;
+    private FactoryInterface $factory;
 
-    /**
-     * @var TranslatorInterface
-     */
-    private $translator;
+    private TranslatorInterface $translator;
 
-    /**
-     * @var array
-     */
-    private $defaultOptions;
+    private array $defaultOptions;
 
     public function __construct(FactoryInterface $factory, TranslatorInterface $translator)
     {
