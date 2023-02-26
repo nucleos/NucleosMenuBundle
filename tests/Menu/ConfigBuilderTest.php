@@ -21,7 +21,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 final class ConfigBuilderTest extends TestCase
 {
     /**
-     * @var MockObject&FactoryInterface
+     * @var FactoryInterface&MockObject
      */
     private FactoryInterface $factory;
 
@@ -106,7 +106,7 @@ final class ConfigBuilderTest extends TestCase
                 ],
             ])
             ->willReturn($mainMenu)
-            ;
+        ;
 
         static::assertSame($mainMenu, $builder->buildMenu([
             'attributes' => [

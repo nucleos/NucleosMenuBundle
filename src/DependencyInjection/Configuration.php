@@ -93,7 +93,7 @@ final class Configuration implements ConfigurationInterface
                     })->end()
                 ->end()
             ->end()
-            ;
+        ;
     }
 
     private function evaluateChildren(array &$child, string $name): void
