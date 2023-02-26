@@ -18,15 +18,12 @@ use Nucleos\MenuBundle\Menu\ConfigBuilderInterface;
 
 final class ConfigProvider implements MenuProviderInterface
 {
-    /**
-     * @var ConfigBuilderInterface
-     */
-    private $builder;
+    private ConfigBuilderInterface $builder;
 
     /**
      * @var array<string, mixed>
      */
-    private $menus;
+    private array $menus;
 
     public function __construct(ConfigBuilderInterface $builder, array $menuIds)
     {
