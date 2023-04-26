@@ -11,10 +11,13 @@ declare(strict_types=1);
 
 namespace Nucleos\MenuBundle\Tests\Menu;
 
+use Closure;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Nucleos\MenuBundle\Menu\ConfigBuilder;
+use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\MockObject\Rule\InvokedCount;
 use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -132,8 +135,8 @@ final class ConfigBuilderTest extends TestCase
             ->with($item)
         ;
 
-        $this->factory->expects(static::exactly(2))->method('createItem')
-            ->withConsecutive(
+        $this->factory->expects($matcher = static::exactly(2))->method('createItem')
+            ->willReturnCallback($this->withParameter($matcher, [
                 ['main', [
                     'attributes' => [
                         'class' => 'nav',
@@ -152,8 +155,8 @@ final class ConfigBuilderTest extends TestCase
                         'safe_label'         => true,
                         'translation_domain' => false,
                     ],
-                ]]
-            )
+                ]],
+            ]))
             ->willReturn(
                 $mainMenu,
                 $item
@@ -188,8 +191,8 @@ final class ConfigBuilderTest extends TestCase
             ->with($item)
         ;
 
-        $this->factory->expects(static::exactly(2))->method('createItem')
-            ->withConsecutive(
+        $this->factory->expects($matcher = static::exactly(2))->method('createItem')
+            ->willReturnCallback($this->withParameter($matcher, [
                 ['main', [
                     'attributes' => [
                         'class' => 'nav',
@@ -206,8 +209,8 @@ final class ConfigBuilderTest extends TestCase
                         'safe_label'         => true,
                         'translation_domain' => false,
                     ],
-                ]]
-            )
+                ]],
+            ]))
             ->willReturn(
                 $mainMenu,
                 $item
@@ -244,8 +247,8 @@ final class ConfigBuilderTest extends TestCase
             ->with($item)
         ;
 
-        $this->factory->expects(static::exactly(2))->method('createItem')
-            ->withConsecutive(
+        $this->factory->expects($matcher = static::exactly(2))->method('createItem')
+            ->willReturnCallback($this->withParameter($matcher, [
                 ['main', [
                     'attributes' => [
                         'class' => 'nav',
@@ -262,8 +265,8 @@ final class ConfigBuilderTest extends TestCase
                         'safe_label'         => true,
                         'translation_domain' => false,
                     ],
-                ]]
-            )
+                ]],
+            ]))
             ->willReturn(
                 $mainMenu,
                 $item
@@ -301,8 +304,8 @@ final class ConfigBuilderTest extends TestCase
             ->with($item)
         ;
 
-        $this->factory->expects(static::exactly(3))->method('createItem')
-            ->withConsecutive(
+        $this->factory->expects($matcher = static::exactly(3))->method('createItem')
+            ->willReturnCallback($this->withParameter($matcher, [
                 ['main', [
                     'attributes' => [
                         'class' => 'nav',
@@ -340,7 +343,7 @@ final class ConfigBuilderTest extends TestCase
                         'translation_domain' => false,
                     ],
                 ]],
-            )
+            ]))
             ->willReturn(
                 $mainMenu,
                 $item,
@@ -363,5 +366,18 @@ final class ConfigBuilderTest extends TestCase
                 ],
             ],
         ], []));
+    }
+
+    /**
+     * @param array<array-key, mixed[]> $parameters
+     */
+    protected function withParameter(InvokedCount $matcher, array $parameters): Closure
+    {
+        return static function () use ($matcher, $parameters): void {
+            /** @psalm-suppress InternalMethod */
+            $callNumber = $matcher->numberOfInvocations();
+
+            Assert::assertEquals($parameters[$callNumber-1], \func_get_args(), sprintf('Call %s', $callNumber));
+        };
     }
 }
