@@ -29,6 +29,5 @@ return static function (ContainerConfigurator $container): void {
                 new Reference('nucleos_menu.builder.config'),
                 new Parameter('nucleos_menu.groups'),
             ])
-
     ;
 };
