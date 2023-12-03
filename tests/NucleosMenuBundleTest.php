@@ -23,15 +23,15 @@ final class NucleosMenuBundleTest extends TestCase
     {
         $bundle = new NucleosMenuBundle();
 
-        static::assertInstanceOf(NucleosMenuExtension::class, $bundle->getContainerExtension());
+        self::assertInstanceOf(NucleosMenuExtension::class, $bundle->getContainerExtension());
     }
 
     public function testBuild(): void
     {
         $containerBuilder = $this->createMock(ContainerBuilder::class);
 
-        $containerBuilder->expects(static::once())->method('addCompilerPass')
-            ->with(static::isInstanceOf(MenuCompilerPass::class))
+        $containerBuilder->expects(self::once())->method('addCompilerPass')
+            ->with(self::isInstanceOf(MenuCompilerPass::class))
         ;
 
         $bundle = new NucleosMenuBundle();

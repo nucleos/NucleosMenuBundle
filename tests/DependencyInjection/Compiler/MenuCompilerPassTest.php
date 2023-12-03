@@ -37,7 +37,7 @@ final class MenuCompilerPassTest extends TestCase
     public function testProcess(): void
     {
         $definition = $this->createMock(Definition::class);
-        $definition->expects(static::once())->method('addMethodCall')
+        $definition->expects(self::once())->method('addMethodCall')
             ->with('add', ['main'])
         ;
 
@@ -64,6 +64,6 @@ final class MenuCompilerPassTest extends TestCase
         $compiler = new MenuCompilerPass();
         $compiler->process($this->container);
 
-        $this->registryDefinitionMock->expects(static::never())->method('addMethodCall');
+        $this->registryDefinitionMock->expects(self::never())->method('addMethodCall');
     }
 }

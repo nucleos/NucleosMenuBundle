@@ -60,7 +60,7 @@ final class ConfigBuilderTest extends TestCase
             ->willReturn($mainMenu)
         ;
 
-        static::assertSame($mainMenu, $builder->buildMenu([], []));
+        self::assertSame($mainMenu, $builder->buildMenu([], []));
     }
 
     public function testBuildMenuWithOptions(): void
@@ -85,7 +85,7 @@ final class ConfigBuilderTest extends TestCase
             ->willReturn($mainMenu)
         ;
 
-        static::assertSame($mainMenu, $builder->buildMenu([], [
+        self::assertSame($mainMenu, $builder->buildMenu([], [
             'foo' => 'bar',
         ]));
     }
@@ -111,7 +111,7 @@ final class ConfigBuilderTest extends TestCase
             ->willReturn($mainMenu)
         ;
 
-        static::assertSame($mainMenu, $builder->buildMenu([
+        self::assertSame($mainMenu, $builder->buildMenu([
             'attributes' => [
                 'attr-foo' => 'custom',
             ],
@@ -131,11 +131,11 @@ final class ConfigBuilderTest extends TestCase
         $item = $this->createMock(ItemInterface::class);
 
         $mainMenu = $this->createMock(ItemInterface::class);
-        $mainMenu->expects(static::once())->method('addChild')
+        $mainMenu->expects(self::once())->method('addChild')
             ->with($item)
         ;
 
-        $this->factory->expects($matcher = static::exactly(2))->method('createItem')
+        $this->factory->expects($matcher = self::exactly(2))->method('createItem')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['main', [
                     'attributes' => [
@@ -163,7 +163,7 @@ final class ConfigBuilderTest extends TestCase
             )
         ;
 
-        static::assertSame($mainMenu, $builder->buildMenu([
+        self::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
                 [
                     'label'       => 'my-label',
@@ -187,11 +187,11 @@ final class ConfigBuilderTest extends TestCase
         $item = $this->createMock(ItemInterface::class);
 
         $mainMenu = $this->createMock(ItemInterface::class);
-        $mainMenu->expects(static::once())->method('addChild')
+        $mainMenu->expects(self::once())->method('addChild')
             ->with($item)
         ;
 
-        $this->factory->expects($matcher = static::exactly(2))->method('createItem')
+        $this->factory->expects($matcher = self::exactly(2))->method('createItem')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['main', [
                     'attributes' => [
@@ -222,7 +222,7 @@ final class ConfigBuilderTest extends TestCase
             ->willReturn('My label')
         ;
 
-        static::assertSame($mainMenu, $builder->buildMenu([
+        self::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
                 [
                     'label'           => 'my-label',
@@ -243,11 +243,11 @@ final class ConfigBuilderTest extends TestCase
         $item = $this->createMock(ItemInterface::class);
 
         $mainMenu = $this->createMock(ItemInterface::class);
-        $mainMenu->expects(static::once())->method('addChild')
+        $mainMenu->expects(self::once())->method('addChild')
             ->with($item)
         ;
 
-        $this->factory->expects($matcher = static::exactly(2))->method('createItem')
+        $this->factory->expects($matcher = self::exactly(2))->method('createItem')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['main', [
                     'attributes' => [
@@ -273,7 +273,7 @@ final class ConfigBuilderTest extends TestCase
             )
         ;
 
-        static::assertSame($mainMenu, $builder->buildMenu([
+        self::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
                 [
                     'label' => 'my-label',
@@ -295,16 +295,16 @@ final class ConfigBuilderTest extends TestCase
         );
 
         $item = $this->createMock(ItemInterface::class);
-        $item->expects(static::once())->method('addChild')
+        $item->expects(self::once())->method('addChild')
             ->with($item)
         ;
 
         $mainMenu = $this->createMock(ItemInterface::class);
-        $mainMenu->expects(static::once())->method('addChild')
+        $mainMenu->expects(self::once())->method('addChild')
             ->with($item)
         ;
 
-        $this->factory->expects($matcher = static::exactly(3))->method('createItem')
+        $this->factory->expects($matcher = self::exactly(3))->method('createItem')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['main', [
                     'attributes' => [
@@ -351,7 +351,7 @@ final class ConfigBuilderTest extends TestCase
             )
         ;
 
-        static::assertSame($mainMenu, $builder->buildMenu([
+        self::assertSame($mainMenu, $builder->buildMenu([
             'items' => [
                 [
                     'label'       => 'my-label',
