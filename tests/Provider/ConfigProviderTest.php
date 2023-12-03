@@ -42,7 +42,7 @@ final class ConfigProviderTest extends TestCase
             'foo' => ['name' => 'foo'],
             'bar' => ['name' => 'bar'],
         ]);
-        static::assertSame($menu, $configProvider->get('foo', ['a' => 'b']));
+        self::assertSame($menu, $configProvider->get('foo', ['a' => 'b']));
     }
 
     public function testGetDoesNotExist(): void
@@ -63,7 +63,7 @@ final class ConfigProviderTest extends TestCase
             'bar' => ['name' => 'bar'],
         ]);
 
-        static::assertTrue($configProvider->has('foo'));
+        self::assertTrue($configProvider->has('foo'));
     }
 
     public function testHasNot(): void
@@ -73,6 +73,6 @@ final class ConfigProviderTest extends TestCase
             'bar' => ['name' => 'bar'],
         ]);
 
-        static::assertFalse($configProvider->has('baz'));
+        self::assertFalse($configProvider->has('baz'));
     }
 }
