@@ -34,7 +34,7 @@ final class ConfigProvider implements MenuProviderInterface
     public function get($name, array $options = []): ItemInterface
     {
         if (!$this->has($name)) {
-            throw new InvalidArgumentException(sprintf('The menu "%s" is not defined.', $name));
+            throw new InvalidArgumentException(\sprintf('The menu "%s" is not defined.', $name));
         }
 
         return $this->builder->buildMenu($this->menus[$name], $options);
