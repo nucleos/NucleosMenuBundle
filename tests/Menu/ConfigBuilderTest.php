@@ -374,7 +374,6 @@ final class ConfigBuilderTest extends TestCase
     protected function withParameter(InvokedCount $matcher, array $parameters): Closure
     {
         return static function () use ($matcher, $parameters): void {
-            /** @psalm-suppress InternalMethod */
             $callNumber = $matcher->numberOfInvocations();
 
             Assert::assertEquals($parameters[$callNumber-1], \func_get_args(), sprintf('Call %s', $callNumber));
