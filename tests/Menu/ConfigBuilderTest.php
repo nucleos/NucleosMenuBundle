@@ -376,7 +376,7 @@ final class ConfigBuilderTest extends TestCase
         return static function () use ($matcher, $parameters): void {
             $callNumber = $matcher->numberOfInvocations();
 
-            Assert::assertEquals($parameters[$callNumber-1], \func_get_args(), sprintf('Call %s', $callNumber));
+            Assert::assertEquals($parameters[$callNumber-1], \func_get_args(), \sprintf('Call %s', $callNumber));
         };
     }
 }

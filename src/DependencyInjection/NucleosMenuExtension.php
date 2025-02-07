@@ -31,7 +31,7 @@ final class NucleosMenuExtension extends Extension
 
         $container->setParameter('nucleos_menu.groups', array_combine(
             array_map(static function (string $name): string {
-                return sprintf('static_%s', $name);
+                return \sprintf('static_%s', $name);
             }, array_keys($config['groups'])),
             $config['groups']
         ));
