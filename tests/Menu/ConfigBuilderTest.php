@@ -119,7 +119,7 @@ final class ConfigBuilderTest extends TestCase
     }
 
     /**
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @SuppressWarnings("PHPMD.ExcessiveMethodLength")
      */
     public function testBuildMenuWithItems(): void
     {
@@ -285,7 +285,7 @@ final class ConfigBuilderTest extends TestCase
     }
 
     /**
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @SuppressWarnings("PHPMD.ExcessiveMethodLength")
      */
     public function testBuildMenuWithChildren(): void
     {

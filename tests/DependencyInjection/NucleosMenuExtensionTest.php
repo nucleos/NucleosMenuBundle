@@ -17,7 +17,7 @@ use Nucleos\MenuBundle\DependencyInjection\NucleosMenuExtension;
 final class NucleosMenuExtensionTest extends AbstractExtensionTestCase
 {
     /**
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @SuppressWarnings("PHPMD.ExcessiveMethodLength")
      */
     public function testLoadDefault(): void
     {

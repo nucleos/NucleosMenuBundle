@@ -32,7 +32,7 @@ final class ConfigurationTest extends TestCase
     }
 
     /**
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @SuppressWarnings("PHPMD.ExcessiveMethodLength")
      */
     public function testGroupsOptions(): void
     {
