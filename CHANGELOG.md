@@ -2,27 +2,25 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.9.0 - TBD
+## 2.9.0 - 2026-04-03
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [2.9.0](https://github.com/nucleos/NucleosMenuBundle/milestone/17)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 2.9.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **2**
+- Total contributors: **2**
 
-### Removed
+#### dependency
 
-- Nothing.
-
-### Fixed
-
-- Nothing.
+ - [526: Add support for symfony 8](https://github.com/nucleos/NucleosMenuBundle/pull/526) thanks to @core23
+ - [520: Update dependency symfony/phpunit-bridge to v8](https://github.com/nucleos/NucleosMenuBundle/pull/520) thanks to @renovate[bot]
 
 ## 2.8.0 - 2025-10-12
 
