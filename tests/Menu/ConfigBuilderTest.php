@@ -48,7 +48,7 @@ final class ConfigBuilderTest extends TestCase
 
         $mainMenu = $this->createMock(ItemInterface::class);
 
-        $this->factory->method('createItem')
+        $this->factory->expects(self::once())->method('createItem')
             ->with('main', [
                 'attributes' => [
                     'class' => 'nav',
@@ -72,7 +72,7 @@ final class ConfigBuilderTest extends TestCase
 
         $mainMenu = $this->createMock(ItemInterface::class);
 
-        $this->factory->method('createItem')
+        $this->factory->expects(self::once())->method('createItem')
             ->with('main', [
                 'attributes' => [
                     'class' => 'nav',
@@ -99,7 +99,7 @@ final class ConfigBuilderTest extends TestCase
 
         $mainMenu = $this->createMock(ItemInterface::class);
 
-        $this->factory->method('createItem')
+        $this->factory->expects(self::once())->method('createItem')
             ->with('main', [
                 'attributes' => [
                     'class' => 'nav',
@@ -217,7 +217,7 @@ final class ConfigBuilderTest extends TestCase
             )
         ;
 
-        $this->translator->method('trans')
+        $this->translator->expects(self::once())->method('trans')
             ->with('my-label', [], 'App')
             ->willReturn('My label')
         ;

@@ -34,7 +34,8 @@ final class ConfigProviderTest extends TestCase
     {
         $menu = $this->createMock(ItemInterface::class);
 
-        $this->configBuilder->method('buildMenu')->with(['name' => 'foo'], ['a' => 'b'])
+        $this->configBuilder->expects(self::once())->method('buildMenu')
+            ->with(['name' => 'foo'], ['a' => 'b'])
             ->willReturn($menu)
         ;
 
